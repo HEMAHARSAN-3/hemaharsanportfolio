@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -13,7 +12,6 @@ import {
   Lightning,
   Palette,
   CloudArrowUp,
-  PencilRuler,
   Wrench
 } from 'phosphor-react';
 
@@ -44,7 +42,7 @@ const SkillsSection = () => {
     },
     {
       category: "Design",
-      icon: Palette,
+      icon: PaintBrush,
       skills: ["Figma", "GSAP", "Three.js"],
       color: "text-neon-pink"
     },
