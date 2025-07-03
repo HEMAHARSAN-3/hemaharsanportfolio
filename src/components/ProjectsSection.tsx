@@ -1,8 +1,7 @@
-
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ExternalLink, Code } from 'phosphor-react';
+import { ArrowSquareOut, Code } from 'phosphor-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -186,7 +185,7 @@ const ProjectsSection = () => {
                   {/* Action Buttons */}
                   <div className="flex gap-3 pt-4">
                     <button className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-neon-blue to-neon-purple text-white text-sm rounded-lg hover:scale-105 transition-transform duration-200">
-                      <ExternalLink size={16} weight="light" />
+                      <ArrowSquareOut size={16} weight="light" />
                       Live Demo
                     </button>
                     <button className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm text-white text-sm rounded-lg border border-white/20 hover:scale-105 transition-transform duration-200">

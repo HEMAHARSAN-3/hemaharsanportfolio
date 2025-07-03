@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 import { List, X } from 'phosphor-react';
 
 const Navigation = () => {
-  const navRef = useRef<HTMLNavElement>(null);
+  const navRef = useRef<HTMLElement>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
