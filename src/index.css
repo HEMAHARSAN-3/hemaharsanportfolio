@@ -169,7 +169,7 @@
   .animated-link:hover::after {
     @apply scale-x-100 origin-bottom-left;
   }
-</layer>
+}
 
 /* Custom animations */
 @keyframes matrix-rain {
