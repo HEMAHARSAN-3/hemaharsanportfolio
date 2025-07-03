@@ -45,12 +45,12 @@ const HeroSection = () => {
       <div className="hero-content relative z-10 section-padding w-full">
         <div className="max-w-4xl">
           {/* Main Headline */}
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             <span className="text-white">Hi, I'm </span>
             <span className="text-gradient">Hema Harsan</span>
             <br />
             <span className="text-white/80 text-4xl md:text-5xl lg:text-6xl font-light">
-              Web Developer
+              Full Stack Developer
             </span>
           </h1>
           

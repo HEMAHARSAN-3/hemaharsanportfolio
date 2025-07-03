@@ -54,7 +54,7 @@ const AboutSection = () => {
     <section 
       id="about" 
       ref={sectionRef} 
-      className="dark-section min-h-screen flex items-center justify-center px-6 md:px-12 lg:px-20"
+      className="dark-section min-h-screen flex items-center justify-center px-6 md:px-12 lg:px-20 pt-20"
     >
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -62,8 +62,12 @@ const AboutSection = () => {
           <div ref={imageRef} className="relative">
             <div className="glass-card p-8 text-center">
               <div className="w-64 h-64 mx-auto rounded-full bg-gradient-to-br from-neon-blue via-neon-purple to-neon-pink p-1 mb-6">
-                <div className="w-full h-full rounded-full bg-cyber-dark flex items-center justify-center">
-                  <div className="text-6xl text-gradient font-bold">HH</div>
+                <div className="w-full h-full rounded-full bg-cyber-dark flex items-center justify-center overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/c828580d-3958-4a05-b94c-6c010bed823b.png" 
+                    alt="Hema Harsan R"
+                    className="w-full h-full object-cover rounded-full"
+                  />
                 </div>
               </div>
               <div className="neon-glow rounded-full absolute inset-8 pointer-events-none opacity-30"></div>
@@ -77,14 +81,20 @@ const AboutSection = () => {
                 About Me
               </h2>
               <p className="text-lg text-white/80 leading-relaxed mb-6">
-                I'm a passionate Full Stack Developer who specializes in creating 
-                immersive digital experiences using cutting-edge technologies. 
-                With expertise in modern web frameworks and a keen eye for futuristic design.
+                Hi, I'm Hema Harsan R — a B.Tech student specializing in Artificial Intelligence & Data Science, with a deep passion for Full Stack Development. I love building smart, meaningful solutions that blend technology and creativity.
               </p>
-              <p className="text-lg text-white/80 leading-relaxed">
-                I transform complex ideas into elegant, performant solutions that 
-                push the boundaries of what's possible on the web.
+              <p className="text-lg text-white/80 leading-relaxed mb-8">
+                Whether it's developing dynamic web apps or diving into the latest tech trends, I'm always curious, always learning, and always pushing to turn ideas into impactful digital experiences. I enjoy working on real-world projects that challenge me to grow and make a difference.
               </p>
+              
+              {/* Academic Background */}
+              <div className="glass-card p-6 rounded-xl">
+                <h3 className="text-xl font-semibold text-gradient mb-4">Academic Background</h3>
+                <div className="space-y-2">
+                  <p className="text-white/90 font-medium">B.Tech in AI & Data Science - 4th Year</p>
+                  <p className="text-white/70">Dr. N.G.P. Institute of Technology</p>
+                </div>
+              </div>
             </div>
 
             {/* CTA Links */}

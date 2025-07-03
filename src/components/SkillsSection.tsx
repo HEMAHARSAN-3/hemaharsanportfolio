@@ -90,7 +90,7 @@ const SkillsSection = () => {
     <section 
       id="skills" 
       ref={sectionRef} 
-      className="dark-section section-padding pt-20"
+      className="dark-section section-padding pt-32"
     >
       {/* Background Particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
