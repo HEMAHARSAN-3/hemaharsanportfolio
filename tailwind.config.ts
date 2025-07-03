@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,7 +19,27 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				inter: ['Inter', 'sans-serif'],
+			},
 			colors: {
+				// Futuristic color palette
+				neon: {
+					blue: '#00D9FF',
+					purple: '#8B5CF6',
+					pink: '#FF00FF',
+					green: '#00FF88',
+				},
+				cyber: {
+					dark: '#0A0A0F',
+					darker: '#050508',
+					purple: '#1E1B4B',
+					blue: '#1E3A8A',
+				},
+				glass: {
+					light: 'rgba(255, 255, 255, 0.1)',
+					dark: 'rgba(0, 0, 0, 0.2)',
+				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -84,11 +105,38 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'glow-pulse': {
+					'0%, 100%': {
+						boxShadow: '0 0 20px rgba(0, 217, 255, 0.5)',
+					},
+					'50%': {
+						boxShadow: '0 0 40px rgba(0, 217, 255, 0.8)',
+					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0px)',
+					},
+					'50%': {
+						transform: 'translateY(-20px)',
+					}
+				},
+				'progress-fill': {
+					'0%': {
+						width: '0%',
+					},
+					'100%': {
+						width: '100%',
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
+				'float': 'float 3s ease-in-out infinite',
+				'progress-fill': 'progress-fill 2s ease-out forwards',
 			}
 		}
 	},
