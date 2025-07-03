@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -66,35 +67,37 @@ const ProjectsSection = () => {
               opacity: 0, 
               y: 100, 
               scale: 0.8,
-              rotationY: 45
+              rotationY: 45,
+              filter: "blur(10px)"
             },
             { 
               opacity: 1, 
               y: 0, 
               scale: 1,
               rotationY: 0,
+              filter: "blur(0px)",
               duration: 0.8, 
               stagger: 0.2,
-              ease: "power2.out"
+              ease: "power3.out"
             }
           );
         }
       });
 
-      // Hover animations
+      // Enhanced hover animations
       document.querySelectorAll('.project-card').forEach(card => {
         card.addEventListener('mouseenter', () => {
           gsap.to(card, {
-            y: -10,
-            scale: 1.02,
-            duration: 0.3,
-            ease: "power2.out"
+            y: -15,
+            scale: 1.03,
+            duration: 0.4,
+            ease: "power3.out"
           });
           
           gsap.to(card.querySelector('.card-glow'), {
             opacity: 1,
             scale: 1.1,
-            duration: 0.3
+            duration: 0.4
           });
         });
 
@@ -102,14 +105,14 @@ const ProjectsSection = () => {
           gsap.to(card, {
             y: 0,
             scale: 1,
-            duration: 0.3,
-            ease: "power2.out"
+            duration: 0.4,
+            ease: "power3.out"
           });
           
           gsap.to(card.querySelector('.card-glow'), {
             opacity: 0,
             scale: 1,
-            duration: 0.3
+            duration: 0.4
           });
         });
       });
@@ -123,7 +126,7 @@ const ProjectsSection = () => {
     <section 
       id="projects" 
       ref={sectionRef} 
-      className="projects-section section-padding"
+      className="dark-section section-padding pt-20"
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
@@ -146,23 +149,23 @@ const ProjectsSection = () => {
               key={project.id}
               className="project-card relative group cursor-pointer"
             >
-              {/* Glow Effect */}
-              <div className="card-glow absolute inset-0 bg-gradient-to-r from-neon-blue/20 to-neon-purple/20 rounded-2xl blur-xl opacity-0 transition-opacity duration-300"></div>
+              {/* Enhanced Glow Effect */}
+              <div className="card-glow absolute inset-0 bg-gradient-to-r from-neon-blue/30 to-neon-purple/30 rounded-2xl blur-xl opacity-0 transition-opacity duration-300"></div>
               
               {/* Card Content */}
-              <div className="glass-card p-6 h-full relative z-10">
+              <div className="glass-card p-6 h-full relative z-10 hover:border-neon-blue/50 transition-colors duration-300">
                 {/* Project Image */}
                 <div className="aspect-video rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-cyber-purple to-cyber-blue">
                   <img 
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
                 
                 {/* Project Info */}
                 <div className="space-y-4">
-                  <h3 className="text-xl font-bold text-white">
+                  <h3 className="text-xl font-bold text-white group-hover:text-neon-blue transition-colors duration-300">
                     {project.title}
                   </h3>
                   
@@ -175,7 +178,7 @@ const ProjectsSection = () => {
                     {project.tech.map((tech) => (
                       <span 
                         key={tech}
-                        className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-xs text-neon-blue border border-white/20"
+                        className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-xs text-neon-blue border border-white/20 hover:border-neon-blue/50 transition-colors duration-300"
                       >
                         {tech}
                       </span>
@@ -184,11 +187,11 @@ const ProjectsSection = () => {
                   
                   {/* Action Buttons */}
                   <div className="flex gap-3 pt-4">
-                    <button className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-neon-blue to-neon-purple text-white text-sm rounded-lg hover:scale-105 transition-transform duration-200">
+                    <button className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-neon-blue to-neon-purple text-white text-sm rounded-lg hover:scale-105 hover:shadow-lg transition-all duration-300">
                       <ArrowSquareOut size={16} weight="light" />
                       Live Demo
                     </button>
-                    <button className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm text-white text-sm rounded-lg border border-white/20 hover:scale-105 transition-transform duration-200">
+                    <button className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm text-white text-sm rounded-lg border border-white/20 hover:scale-105 hover:border-neon-blue/50 transition-all duration-300">
                       <Code size={16} weight="light" />
                       Code
                     </button>

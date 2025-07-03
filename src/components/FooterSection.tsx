@@ -18,15 +18,16 @@ const FooterSection = () => {
         onEnter: () => {
           gsap.fromTo(footerRef.current,
             { opacity: 0, y: 60, filter: "blur(10px)" },
-            { opacity: 1, y: 0, filter: "blur(0px)", duration: 1, ease: "power2.out" }
+            { opacity: 1, y: 0, filter: "blur(0px)", duration: 1, ease: "power3.out" }
           );
         }
       });
 
-      // Floating particles animation
-      gsap.to(".particle", {
-        y: -10,
-        duration: 2,
+      // Enhanced floating particles animation
+      gsap.to(".footer-particle", {
+        y: -15,
+        x: 10,
+        duration: 4,
         repeat: -1,
         yoyo: true,
         ease: "power1.inOut",
@@ -50,17 +51,20 @@ const FooterSection = () => {
   };
 
   return (
-    <footer ref={footerRef} className="relative section-padding bg-cyber-darker/50">
-      {/* Background Particles */}
+    <footer ref={footerRef} className="relative section-padding dark-section pt-20">
+      {/* Enhanced Background Particles */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(15)].map((_, i) => (
+        {[...Array(20)].map((_, i) => (
           <div
             key={i}
-            className="particle absolute w-2 h-2 bg-neon-blue rounded-full opacity-20"
+            className="footer-particle absolute rounded-full opacity-20"
             style={{
+              width: `${Math.random() * 4 + 2}px`,
+              height: `${Math.random() * 4 + 2}px`,
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 2}s`
+              background: `radial-gradient(circle, rgba(0, 217, 255, ${Math.random() * 0.5 + 0.2}) 0%, transparent 70%)`,
+              animationDelay: `${Math.random() * 4}s`
             }}
           />
         ))}
@@ -79,17 +83,17 @@ const FooterSection = () => {
                 href="https://github.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-2 glass-card hover:scale-110 transition-transform duration-300"
+                className="relative p-2 glass-card hover:scale-110 transition-transform duration-300 ripple-effect"
               >
-                <GithubLogo size={20} weight="light" className="text-white" />
+                <GithubLogo size={20} weight="light" className="text-white hover:text-neon-blue transition-colors duration-300" />
               </a>
               <a 
                 href="https://linkedin.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-2 glass-card hover:scale-110 transition-transform duration-300"
+                className="relative p-2 glass-card hover:scale-110 transition-transform duration-300 ripple-effect"
               >
-                <LinkedinLogo size={20} weight="light" className="text-neon-blue" />
+                <LinkedinLogo size={20} weight="light" className="text-neon-blue hover:text-neon-purple transition-colors duration-300" />
               </a>
             </div>
           </div>
@@ -98,11 +102,11 @@ const FooterSection = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-white">Quick Links</h3>
             <div className="space-y-2">
-              {['Home', 'About', 'Projects', 'Contact'].map((item) => (
+              {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className="block text-white/70 hover:text-neon-blue transition-colors duration-300"
+                  className="animated-link block text-white/70 hover:text-neon-blue transition-colors duration-300"
                 >
                   {item}
                 </button>
@@ -117,7 +121,7 @@ const FooterSection = () => {
               <p>Ready to start your next project?</p>
               <button
                 onClick={() => scrollToSection('contact')}
-                className="text-neon-blue hover:text-neon-purple transition-colors duration-300"
+                className="animated-link text-neon-blue hover:text-neon-purple transition-colors duration-300"
               >
                 Get in touch →
               </button>
@@ -128,12 +132,12 @@ const FooterSection = () => {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/60 text-sm flex items-center gap-2">
-            Made with <Heart size={16} weight="fill" className="text-neon-pink" /> by Hema Harsan
+            Made with <Heart size={16} weight="fill" className="text-neon-pink animate-pulse" /> by Hema Harsan
           </p>
           
           <button
             onClick={scrollToTop}
-            className="px-4 py-2 glass-card text-sm text-white/80 hover:text-white transition-colors duration-300"
+            className="px-4 py-2 glass-card text-sm text-white/80 hover:text-white hover:scale-105 transition-all duration-300"
           >
             Back to Top ↑
           </button>

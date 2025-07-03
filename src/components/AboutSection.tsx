@@ -16,16 +16,6 @@ gsap.registerPlugin(ScrollTrigger);
 const AboutSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
-  const skillsRef = useRef<HTMLDivElement>(null);
-
-  const skills = [
-    { icon: Code, name: 'HTML/CSS', color: 'text-neon-blue' },
-    { icon: Lightning, name: 'JavaScript', color: 'text-neon-green' },
-    { icon: Rocket, name: 'React', color: 'text-neon-blue' },
-    { icon: Cpu, name: 'Node.js', color: 'text-neon-purple' },
-    { icon: Palette, name: 'GSAP', color: 'text-neon-pink' },
-    { icon: Globe, name: 'Full Stack', color: 'text-neon-blue' },
-  ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -37,25 +27,6 @@ const AboutSection = () => {
           gsap.fromTo(imageRef.current,
             { opacity: 0, x: -50, rotation: -5 },
             { opacity: 1, x: 0, rotation: 0, duration: 1, ease: "power2.out" }
-          );
-        }
-      });
-
-      // Skills stagger animation
-      ScrollTrigger.create({
-        trigger: skillsRef.current,
-        start: "top 80%",
-        onEnter: () => {
-          gsap.fromTo(".skill-item",
-            { opacity: 0, y: 30, scale: 0.8 },
-            { 
-              opacity: 1, 
-              y: 0, 
-              scale: 1, 
-              duration: 0.6, 
-              stagger: 0.1,
-              ease: "back.out(1.7)"
-            }
           );
         }
       });
@@ -91,7 +62,7 @@ const AboutSection = () => {
     <section 
       id="about" 
       ref={sectionRef} 
-      className="about-section section-padding"
+      className="dark-section section-padding pt-20"
     >
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -124,26 +95,20 @@ const AboutSection = () => {
               </p>
             </div>
 
-            {/* Skills Grid */}
-            <div ref={skillsRef} className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {skills.map((skill, index) => {
-                const IconComponent = skill.icon;
-                return (
-                  <div 
-                    key={skill.name}
-                    className="skill-item glass-card p-4 text-center hover:scale-105 transition-transform duration-300 cursor-pointer"
-                  >
-                    <IconComponent 
-                      size={32} 
-                      weight="light" 
-                      className={`mx-auto mb-2 ${skill.color}`}
-                    />
-                    <div className="text-sm text-white/80 font-medium">
-                      {skill.name}
-                    </div>
-                  </div>
-                );
-              })}
+            {/* CTA Links */}
+            <div className="flex gap-6">
+              <a 
+                href="#projects" 
+                className="animated-link text-neon-blue font-semibold hover:text-neon-purple transition-colors duration-300"
+              >
+                View My Work
+              </a>
+              <a 
+                href="#contact" 
+                className="animated-link text-neon-purple font-semibold hover:text-neon-pink transition-colors duration-300"
+              >
+                Let's Connect
+              </a>
             </div>
           </div>
         </div>

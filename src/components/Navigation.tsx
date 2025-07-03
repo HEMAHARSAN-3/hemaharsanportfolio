@@ -23,13 +23,13 @@ const Navigation = () => {
       gsap.to(mobileMenuRef.current, {
         x: "0%",
         duration: 0.5,
-        ease: "power2.out"
+        ease: "power3.out"
       });
     } else {
       gsap.to(mobileMenuRef.current, {
         x: "100%",
         duration: 0.5,
-        ease: "power2.out"
+        ease: "power3.out"
       });
     }
   };
@@ -43,7 +43,7 @@ const Navigation = () => {
     gsap.to(mobileMenuRef.current, {
       x: "100%",
       duration: 0.5,
-      ease: "power2.out"
+      ease: "power3.out"
     });
   };
 
@@ -58,11 +58,11 @@ const Navigation = () => {
           
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
-            {['Home', 'About', 'Projects', 'Contact'].map((item) => (
+            {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
-                className="text-white/80 hover:text-white transition-colors duration-300 hover:text-neon-blue"
+                className="animated-link text-white/80 hover:text-white transition-colors duration-300 hover:text-neon-blue"
               >
                 {item}
               </button>
@@ -72,7 +72,7 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden text-white p-2"
+            className="md:hidden text-white p-2 hover:scale-110 transition-transform duration-300"
           >
             <List size={24} weight="light" />
           </button>
@@ -89,7 +89,7 @@ const Navigation = () => {
           <div className="flex justify-end p-6">
             <button
               onClick={toggleMenu}
-              className="text-white p-2"
+              className="text-white p-2 hover:scale-110 transition-transform duration-300"
             >
               <X size={24} weight="light" />
             </button>
@@ -97,11 +97,11 @@ const Navigation = () => {
           
           {/* Menu Items */}
           <div className="flex flex-col items-center space-y-8 mt-20">
-            {['Home', 'About', 'Projects', 'Contact'].map((item) => (
+            {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
-                className="text-2xl text-white/80 hover:text-neon-blue transition-colors duration-300"
+                className="text-2xl text-white/80 hover:text-neon-blue transition-colors duration-300 hover:scale-105 transform"
               >
                 {item}
               </button>

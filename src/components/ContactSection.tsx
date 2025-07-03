@@ -23,13 +23,13 @@ const ContactSection = () => {
         start: "top 80%",
         onEnter: () => {
           gsap.fromTo(".form-input",
-            { opacity: 0, x: -30 },
-            { opacity: 1, x: 0, duration: 0.6, stagger: 0.1, ease: "power2.out" }
+            { opacity: 0, x: -30, filter: "blur(5px)" },
+            { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.8, stagger: 0.15, ease: "power3.out" }
           );
           
           gsap.fromTo(".social-icon",
             { opacity: 0, scale: 0.5, rotation: 180 },
-            { opacity: 1, scale: 1, rotation: 0, duration: 0.6, stagger: 0.1, ease: "back.out(1.7)", delay: 0.3 }
+            { opacity: 1, scale: 1, rotation: 0, duration: 0.6, stagger: 0.1, ease: "back.out(1.7)", delay: 0.4 }
           );
         }
       });
@@ -66,10 +66,7 @@ const ContactSection = () => {
       repeat: 1,
       ease: "power2.out",
       onComplete: () => {
-        // Here you would typically send the form data
         console.log('Form submitted:', formData);
-        
-        // Reset form
         setFormData({ name: '', email: '', message: '' });
         
         // Success animation
@@ -87,7 +84,7 @@ const ContactSection = () => {
     <section 
       id="contact" 
       ref={sectionRef} 
-      className="contact-section section-padding"
+      className="dark-section section-padding pt-20"
     >
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
@@ -110,7 +107,7 @@ const ContactSection = () => {
                 placeholder="Your Name"
                 value={formData.name}
                 onChange={handleInputChange}
-                className="cyber-input"
+                className="cyber-input hover:border-neon-purple/50 transition-colors duration-300"
                 required
               />
             </div>
@@ -122,7 +119,7 @@ const ContactSection = () => {
                 placeholder="Your Email"
                 value={formData.email}
                 onChange={handleInputChange}
-                className="cyber-input"
+                className="cyber-input hover:border-neon-purple/50 transition-colors duration-300"
                 required
               />
             </div>
@@ -134,7 +131,7 @@ const ContactSection = () => {
                 value={formData.message}
                 onChange={handleInputChange}
                 rows={6}
-                className="cyber-input resize-none"
+                className="cyber-input resize-none hover:border-neon-purple/50 transition-colors duration-300"
                 required
               />
             </div>
@@ -150,7 +147,7 @@ const ContactSection = () => {
 
           {/* Contact Info */}
           <div className="space-y-8">
-            <div className="glass-card p-8">
+            <div className="glass-card p-8 hover:border-neon-blue/50 transition-colors duration-300">
               <h3 className="text-2xl font-bold text-white mb-6">Get in Touch</h3>
               <div className="space-y-4 text-white/80">
                 <p>
@@ -167,17 +164,17 @@ const ContactSection = () => {
                   href="https://github.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="social-icon p-3 glass-card hover:scale-110 transition-transform duration-300"
+                  className="social-icon relative p-3 glass-card hover:scale-110 transition-transform duration-300 ripple-effect"
                 >
-                  <GithubLogo size={24} weight="light" className="text-white" />
+                  <GithubLogo size={24} weight="light" className="text-white hover:text-neon-blue transition-colors duration-300" />
                 </a>
                 <a 
                   href="https://linkedin.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="social-icon p-3 glass-card hover:scale-110 transition-transform duration-300"
+                  className="social-icon relative p-3 glass-card hover:scale-110 transition-transform duration-300 ripple-effect"
                 >
-                  <LinkedinLogo size={24} weight="light" className="text-neon-blue" />
+                  <LinkedinLogo size={24} weight="light" className="text-neon-blue hover:text-neon-purple transition-colors duration-300" />
                 </a>
               </div>
             </div>
