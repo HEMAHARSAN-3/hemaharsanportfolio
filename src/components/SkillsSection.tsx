@@ -13,7 +13,7 @@ import {
   Lightning,
   Palette,
   CloudArrowUp,
-  Figma,
+  PencilRuler,
   Wrench
 } from 'phosphor-react';
 
