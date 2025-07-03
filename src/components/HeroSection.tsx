@@ -8,10 +8,10 @@ const HeroSection = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Spline fade in from right
+      // Spline fade in from top
       gsap.fromTo(splineRef.current,
-        { opacity: 0, x: 100 },
-        { opacity: 1, x: 0, duration: 2, delay: 4, ease: "power2.out" }
+        { opacity: 0, y: -100 },
+        { opacity: 1, y: 0, duration: 2, delay: 4, ease: "power2.out" }
       );
 
       // CTA button pulse animation
@@ -45,7 +45,7 @@ const HeroSection = () => {
       <div className="hero-content relative z-10 section-padding w-full">
         <div className="max-w-4xl">
           {/* Main Headline */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
             <span className="text-white">Hi, I'm </span>
             <span className="text-gradient">Hema Harsan</span>
             <br />

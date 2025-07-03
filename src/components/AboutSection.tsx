@@ -2,14 +2,6 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { 
-  Code, 
-  Palette, 
-  Rocket, 
-  Lightning, 
-  Globe, 
-  Cpu 
-} from 'phosphor-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -62,7 +54,7 @@ const AboutSection = () => {
     <section 
       id="about" 
       ref={sectionRef} 
-      className="dark-section section-padding pt-20"
+      className="dark-section min-h-screen flex items-center justify-center px-6 md:px-12 lg:px-20"
     >
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
