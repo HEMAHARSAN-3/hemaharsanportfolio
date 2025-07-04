@@ -58,7 +58,7 @@ const AboutSection = () => {
     >
       <div className="max-w-7xl mx-auto w-full">
         {/* Section Title */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 lg:hidden">
           <h2 className="text-5xl md:text-6xl font-bold text-gradient mb-4">
             About Me
           </h2>
@@ -66,6 +66,14 @@ const AboutSection = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-20 items-center">
+          {/* Section Title - Desktop */}
+          <div className="hidden lg:block lg:order-1 mb-8">
+            <h2 className="text-5xl md:text-6xl font-bold text-gradient mb-4">
+              About Me
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-neon-blue to-neon-purple rounded-full"></div>
+          </div>
+
           {/* Profile Image - Order 1 on mobile, Order 2 on desktop */}
           <div ref={imageRef} className="relative order-1 lg:order-2">
             <div className="relative">
@@ -91,7 +99,7 @@ const AboutSection = () => {
           </div>
 
           {/* Content - Order 2 on mobile, Order 1 on desktop */}
-          <div className="space-y-8 order-2 lg:order-1">
+          <div className="space-y-8 order-2 lg:order-1 lg:pl-12">
             <div className="space-y-6">
               <p className="text-lg md:text-xl text-white/90 leading-relaxed">
                 Hi, I'm <span className="text-gradient font-semibold">Hema Harsan R</span> — a B.Tech student specializing in Artificial Intelligence & Data Science, with a deep passion for Full Stack Development. I love building smart, meaningful solutions that blend technology and creativity.

@@ -80,7 +80,7 @@ const FooterSection = () => {
             </p>
             <div className="flex gap-4">
               <a 
-                href="https://github.com" 
+                href="https://github.com/HEMAHARSAN-3" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="relative p-2 glass-card hover:scale-110 transition-transform duration-300 ripple-effect"
@@ -88,7 +88,7 @@ const FooterSection = () => {
                 <GithubLogo size={20} weight="light" className="text-white hover:text-neon-blue transition-colors duration-300" />
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/hema-harsan-r" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="relative p-2 glass-card hover:scale-110 transition-transform duration-300 ripple-effect"

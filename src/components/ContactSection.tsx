@@ -2,7 +2,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { GithubLogo, LinkedinLogo, PaperPlaneTilt } from 'phosphor-react';
+import { GithubLogo, LinkedinLogo, PaperPlaneTilt, Envelope } from 'phosphor-react';
+import emailjs from '@emailjs/browser';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,6 +17,9 @@ const ContactSection = () => {
   });
 
   useEffect(() => {
+    // Initialize EmailJS
+    emailjs.init("JgGVSlfTu9U5uI3Qp");
+
     const ctx = gsap.context(() => {
       // Form inputs animation
       ScrollTrigger.create({
@@ -66,16 +70,24 @@ const ContactSection = () => {
       repeat: 1,
       ease: "power2.out",
       onComplete: () => {
-        console.log('Form submitted:', formData);
-        setFormData({ name: '', email: '', message: '' });
-        
-        // Success animation
-        gsap.to(".submit-btn", {
-          backgroundColor: "#00FF88",
-          duration: 0.3,
-          yoyo: true,
-          repeat: 1
-        });
+        // Send email using EmailJS
+        emailjs.sendForm('service_4chdkfw', 'template_9nw9f9f', formRef.current!)
+          .then(() => {
+            alert('Your message has been sent successfully!');
+            setFormData({ name: '', email: '', message: '' });
+            
+            // Success animation
+            gsap.to(".submit-btn", {
+              backgroundColor: "#00FF88",
+              duration: 0.3,
+              yoyo: true,
+              repeat: 1
+            });
+          })
+          .catch((error) => {
+            alert('Failed to send your message. Please try again.');
+            console.error("Email sending failed:", error);
+          });
       }
     });
   };
@@ -157,11 +169,21 @@ const ContactSection = () => {
                   Whether you need a complete web application or want to enhance your existing platform with cutting-edge features, I'm here to help.
                 </p>
               </div>
+
+              {/* Contact Details */}
+              <div className="mt-6 space-y-3">
+                <div className="flex items-center gap-3 text-white/70">
+                  <Envelope size={20} weight="light" className="text-neon-blue" />
+                  <a href="mailto:hemaharsan3@gmail.com" className="hover:text-neon-blue transition-colors duration-300">
+                    hemaharsan3@gmail.com
+                  </a>
+                </div>
+              </div>
               
               {/* Social Links */}
               <div className="flex gap-4 mt-8">
                 <a 
-                  href="https://github.com" 
+                  href="https://github.com/HEMAHARSAN-3" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="social-icon relative p-3 glass-card hover:scale-110 transition-transform duration-300 ripple-effect"
@@ -169,7 +191,7 @@ const ContactSection = () => {
                   <GithubLogo size={24} weight="light" className="text-white hover:text-neon-blue transition-colors duration-300" />
                 </a>
                 <a 
-                  href="https://linkedin.com" 
+                  href="https://www.linkedin.com/in/hema-harsan-r" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="social-icon relative p-3 glass-card hover:scale-110 transition-transform duration-300 ripple-effect"
