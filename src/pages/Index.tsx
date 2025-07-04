@@ -7,6 +7,7 @@ import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
 import SkillsSection from '../components/SkillsSection';
 import ProjectsSection from '../components/ProjectsSection';
+import AchievementsSection from '../components/AchievementsSection';
 import ContactSection from '../components/ContactSection';
 import FooterSection from '../components/FooterSection';
 import Navigation from '../components/Navigation';
@@ -20,7 +21,7 @@ const Index = () => {
     // Initialize smooth scroll and animations
     const ctx = gsap.context(() => {
       // Set initial states
-      gsap.set([".hero-content", ".about-section", ".skills-section", ".projects-section", ".contact-section"], {
+      gsap.set([".hero-content", ".about-section", ".skills-section", ".projects-section", ".achievements-section", ".contact-section"], {
         opacity: 0,
         y: 50,
         filter: "blur(10px)"
@@ -39,7 +40,7 @@ const Index = () => {
       });
 
       // Section animations on scroll
-      [".about-section", ".skills-section", ".projects-section", ".contact-section"].forEach((selector, index) => {
+      [".about-section", ".skills-section", ".projects-section", ".achievements-section", ".contact-section"].forEach((selector, index) => {
         ScrollTrigger.create({
           trigger: selector,
           start: "top 80%",
@@ -90,6 +91,7 @@ const Index = () => {
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />
+        <AchievementsSection />
         <ContactSection />
         <FooterSection />
       </div>
