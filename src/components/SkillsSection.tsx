@@ -12,8 +12,7 @@ import {
   Cpu,
   Lightning,
   Palette,
-  CloudArrowUp,
-  Wrench
+  CloudArrowUp
 } from 'phosphor-react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -22,27 +21,39 @@ const SkillsSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const skillsRef = useRef<HTMLDivElement>(null);
 
-  const skills = [
-    { name: "HTML", icon: Code, color: "text-orange-400" },
-    { name: "CSS", icon: PaintBrush, color: "text-blue-400" },
-    { name: "JavaScript", icon: Lightning, color: "text-yellow-400" },
-    { name: "React", icon: Cpu, color: "text-cyan-400" },
-    { name: "Next.js", icon: Globe, color: "text-white" },
-    { name: "Tailwind CSS", icon: Palette, color: "text-teal-400" },
-    { name: "Node.js", icon: Database, color: "text-green-400" },
-    { name: "Express", icon: Rocket, color: "text-gray-400" },
-    { name: "MongoDB", icon: Database, color: "text-green-500" },
-    { name: "PostgreSQL", icon: Database, color: "text-blue-500" },
-    { name: "Git", icon: GitBranch, color: "text-orange-500" },
-    { name: "GitHub", icon: GitBranch, color: "text-gray-300" },
-    { name: "Docker", icon: Wrench, color: "text-blue-600" },
-    { name: "Postman", icon: Rocket, color: "text-orange-600" },
-    { name: "Figma", icon: PaintBrush, color: "text-purple-400" },
-    { name: "GSAP", icon: Lightning, color: "text-green-300" },
-    { name: "Three.js", icon: Cpu, color: "text-red-400" },
-    { name: "Vercel", icon: CloudArrowUp, color: "text-black" },
-    { name: "Netlify", icon: CloudArrowUp, color: "text-teal-500" },
-    { name: "Render", icon: CloudArrowUp, color: "text-purple-500" }
+  const skillCategories = [
+    {
+      title: "Frontend Development",
+      color: "from-blue-500 to-cyan-400",
+      skills: [
+        { name: "HTML", icon: Code, color: "text-orange-400" },
+        { name: "CSS", icon: PaintBrush, color: "text-blue-400" },
+        { name: "JavaScript", icon: Lightning, color: "text-yellow-400" },
+        { name: "React", icon: Cpu, color: "text-cyan-400" },
+        { name: "Next.js", icon: Globe, color: "text-white" },
+        { name: "Tailwind CSS", icon: Palette, color: "text-teal-400" },
+        { name: "Three.js", icon: Cpu, color: "text-red-400" }
+      ]
+    },
+    {
+      title: "Backend Development",
+      color: "from-green-500 to-emerald-400",
+      skills: [
+        { name: "Node.js", icon: Database, color: "text-green-400" },
+        { name: "Express", icon: Rocket, color: "text-gray-400" },
+        { name: "MongoDB", icon: Database, color: "text-green-500" },
+        { name: "PostgreSQL", icon: Database, color: "text-blue-500" }
+      ]
+    },
+    {
+      title: "Tools & Platforms",
+      color: "from-purple-500 to-pink-400",
+      skills: [
+        { name: "Git", icon: GitBranch, color: "text-orange-500" },
+        { name: "GitHub", icon: GitBranch, color: "text-gray-300" },
+        { name: "Netlify", icon: CloudArrowUp, color: "text-teal-500" }
+      ]
+    }
   ];
 
   useEffect(() => {
@@ -52,10 +63,10 @@ const SkillsSection = () => {
         trigger: skillsRef.current,
         start: "top 80%",
         onEnter: () => {
-          gsap.fromTo(".skill-item",
+          gsap.fromTo(".skill-category",
             { 
               opacity: 0, 
-              y: 30, 
+              y: 50, 
               scale: 0.9
             },
             { 
@@ -63,7 +74,7 @@ const SkillsSection = () => {
               y: 0, 
               scale: 1,
               duration: 0.8, 
-              stagger: 0.05,
+              stagger: 0.2,
               ease: "power2.out"
             }
           );
@@ -90,7 +101,7 @@ const SkillsSection = () => {
     <section 
       id="skills" 
       ref={sectionRef} 
-      className="dark-section section-padding pt-32"
+      className="dark-section section-padding"
     >
       {/* Background Particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -107,7 +118,7 @@ const SkillsSection = () => {
         ))}
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto">
+      <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
@@ -118,41 +129,55 @@ const SkillsSection = () => {
           </p>
         </div>
 
-        {/* Skills Grid */}
+        {/* Skills Categories */}
         <div 
           ref={skillsRef}
-          className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6"
+          className="grid lg:grid-cols-3 gap-8"
         >
-          {skills.map((skill, index) => {
-            const IconComponent = skill.icon;
-            return (
-              <div 
-                key={skill.name}
-                className="skill-item glass-card p-6 text-center hover:scale-105 transition-all duration-300 cursor-pointer group"
-              >
-                {/* Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/10 to-neon-purple/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
-                <div className="relative z-10">
-                  {/* Icon */}
-                  <div className="flex justify-center mb-4">
-                    <div className="p-3 glass-card rounded-xl">
-                      <IconComponent 
-                        size={32} 
-                        weight="light" 
-                        className={skill.color}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Skill Name */}
-                  <h3 className="text-sm font-semibold text-white/90 group-hover:text-neon-blue transition-colors duration-300">
-                    {skill.name}
-                  </h3>
-                </div>
+          {skillCategories.map((category, categoryIndex) => (
+            <div 
+              key={category.title}
+              className="skill-category glass-card p-8 rounded-2xl hover:scale-105 transition-all duration-300"
+            >
+              {/* Category Header */}
+              <div className="text-center mb-6">
+                <div className={`w-16 h-1 bg-gradient-to-r ${category.color} mx-auto rounded-full mb-4`}></div>
+                <h3 className="text-2xl font-bold text-white mb-2">{category.title}</h3>
               </div>
-            );
-          })}
+
+              {/* Skills Grid */}
+              <div className="grid grid-cols-2 gap-4">
+                {category.skills.map((skill, index) => {
+                  const IconComponent = skill.icon;
+                  return (
+                    <div 
+                      key={skill.name}
+                      className="flex flex-col items-center p-4 glass-card rounded-xl hover:scale-105 transition-all duration-300 cursor-pointer group"
+                    >
+                      {/* Glow Effect */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/10 to-neon-purple/10 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      
+                      <div className="relative z-10 text-center">
+                        {/* Icon */}
+                        <div className="mb-3">
+                          <IconComponent 
+                            size={28} 
+                            weight="light" 
+                            className={skill.color}
+                          />
+                        </div>
+
+                        {/* Skill Name */}
+                        <h4 className="text-sm font-semibold text-white/90 group-hover:text-neon-blue transition-colors duration-300">
+                          {skill.name}
+                        </h4>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

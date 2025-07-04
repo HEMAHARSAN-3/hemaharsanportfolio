@@ -72,36 +72,34 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden text-white p-2 hover:scale-110 transition-transform duration-300"
+            className="md:hidden text-white p-2 hover:scale-110 transition-transform duration-300 z-50 relative"
           >
-            <List size={24} weight="light" />
+            {isMenuOpen ? <X size={24} weight="light" /> : <List size={24} weight="light" />}
           </button>
         </div>
       </nav>
 
+      {/* Mobile Menu Overlay */}
+      {isMenuOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-40 md:hidden"
+          onClick={toggleMenu}
+        />
+      )}
+
       {/* Mobile Menu */}
       <div 
         ref={mobileMenuRef}
-        className="fixed top-0 right-0 h-full w-full bg-cyber-darker z-50 transform translate-x-full md:hidden"
+        className="fixed top-0 right-0 h-full w-80 max-w-full bg-cyber-darker z-50 transform translate-x-full md:hidden"
       >
-        <div className="flex flex-col h-full">
-          {/* Close Button */}
-          <div className="flex justify-end p-6">
-            <button
-              onClick={toggleMenu}
-              className="text-white p-2 hover:scale-110 transition-transform duration-300"
-            >
-              <X size={24} weight="light" />
-            </button>
-          </div>
-          
+        <div className="flex flex-col h-full pt-24 px-8">
           {/* Menu Items */}
-          <div className="flex flex-col items-center space-y-8 mt-20">
+          <div className="flex flex-col space-y-8">
             {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
-                className="text-2xl text-white/80 hover:text-neon-blue transition-colors duration-300 hover:scale-105 transform"
+                className="text-left text-2xl text-white/80 hover:text-neon-blue transition-colors duration-300 hover:scale-105 transform py-2"
               >
                 {item}
               </button>
