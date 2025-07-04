@@ -12,7 +12,9 @@ import {
   Cpu,
   Lightning,
   Palette,
-  CloudArrowUp
+  CloudArrowUp,
+  ChatCircle,
+  Robot
 } from 'phosphor-react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -41,16 +43,20 @@ const SkillsSection = () => {
         { name: "Node.js", icon: Database, color: "text-green-400" },
         { name: "Express", icon: Rocket, color: "text-gray-400" },
         { name: "MongoDB", icon: Database, color: "text-green-500" },
-        { name: "PostgreSQL", icon: Database, color: "text-blue-500" }
+        { name: "PostgreSQL", icon: Database, color: "text-blue-500" },
+        { name: "Git", icon: GitBranch, color: "text-orange-500" },
+        { name: "Netlify", icon: CloudArrowUp, color: "text-teal-500" }
       ]
     },
     {
-      title: "Tools & Platforms",
+      title: "AI Tools & Platforms",
       color: "from-purple-500 to-pink-400",
       skills: [
-        { name: "Git", icon: GitBranch, color: "text-orange-500" },
-        { name: "GitHub", icon: GitBranch, color: "text-gray-300" },
-        { name: "Netlify", icon: CloudArrowUp, color: "text-teal-500" }
+        { name: "ChatGPT", icon: ChatCircle, color: "text-green-400" },
+        { name: "Deepseek", icon: Robot, color: "text-blue-400" },
+        { name: "Lovable", icon: Code, color: "text-pink-400" },
+        { name: "Replit", icon: Code, color: "text-orange-400" },
+        { name: "Bolt AI", icon: Lightning, color: "text-yellow-400" }
       ]
     }
   ];
@@ -100,7 +106,7 @@ const SkillsSection = () => {
     <section 
       id="skills" 
       ref={sectionRef} 
-      className="dark-section section-padding pt-32"
+      className="dark-section section-padding pt-20"
     >
       {/* Background Particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

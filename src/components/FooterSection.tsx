@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { GithubLogo, LinkedinLogo, Heart } from 'phosphor-react';
+import { GithubLogo, LinkedinLogo } from 'phosphor-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -130,11 +130,7 @@ const FooterSection = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-white/60 text-sm flex items-center gap-2">
-            Made with <Heart size={16} weight="fill" className="text-neon-pink animate-pulse" /> by Hema Harsan
-          </p>
-          
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-center items-center gap-4">
           <button
             onClick={scrollToTop}
             className="px-4 py-2 glass-card text-sm text-white/80 hover:text-white hover:scale-105 transition-all duration-300"
