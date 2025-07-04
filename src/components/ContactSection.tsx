@@ -84,7 +84,7 @@ const ContactSection = () => {
     <section 
       id="contact" 
       ref={sectionRef} 
-      className="dark-section section-padding pt-20"
+      className="dark-section section-padding pt-32"
     >
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}

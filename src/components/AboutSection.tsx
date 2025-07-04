@@ -54,7 +54,7 @@ const AboutSection = () => {
     <section 
       id="about" 
       ref={sectionRef} 
-      className="dark-section min-h-screen flex items-center justify-center px-6 md:px-12 lg:px-20"
+      className="dark-section min-h-screen flex items-center justify-center px-6 md:px-12 lg:px-20 pt-32"
     >
       <div className="max-w-7xl mx-auto w-full">
         {/* Section Title */}
@@ -66,8 +66,8 @@ const AboutSection = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* Profile Image */}
-          <div ref={imageRef} className="relative order-2 lg:order-1">
+          {/* Profile Image - Order 1 on mobile, Order 2 on desktop */}
+          <div ref={imageRef} className="relative order-1 lg:order-2">
             <div className="relative">
               {/* Glowing background */}
               <div className="absolute -inset-8 bg-gradient-to-br from-neon-blue/20 via-neon-purple/20 to-neon-pink/20 rounded-full blur-3xl"></div>
@@ -90,29 +90,15 @@ const AboutSection = () => {
             </div>
           </div>
 
-          {/* Content */}
-          <div className="space-y-8 order-1 lg:order-2">
+          {/* Content - Order 2 on mobile, Order 1 on desktop */}
+          <div className="space-y-8 order-2 lg:order-1">
             <div className="space-y-6">
               <p className="text-lg md:text-xl text-white/90 leading-relaxed">
                 Hi, I'm <span className="text-gradient font-semibold">Hema Harsan R</span> — a B.Tech student specializing in Artificial Intelligence & Data Science, with a deep passion for Full Stack Development. I love building smart, meaningful solutions that blend technology and creativity.
               </p>
               <p className="text-lg md:text-xl text-white/80 leading-relaxed">
-                Whether it's developing dynamic web apps or diving into the latest tech trends, I'm always curious, always learning, and always pushing to turn ideas into impactful digital experiences.
+                Whether it's developing dynamic web apps or diving into the latest tech trends, I'm always curious, always learning, and always pushing to turn ideas into impactful digital experiences. Currently in my 4th year of B.Tech in AI & Data Science at Dr. N.G.P. Institute of Technology.
               </p>
-            </div>
-            
-            {/* Academic Background */}
-            <div className="glass-card p-8 rounded-2xl border-l-4 border-neon-blue">
-              <h3 className="text-2xl font-bold text-gradient mb-4 flex items-center gap-2">
-                <div className="w-8 h-8 bg-gradient-to-r from-neon-blue to-neon-purple rounded-full flex items-center justify-center">
-                  <span className="text-white text-sm">🎓</span>
-                </div>
-                Academic Background
-              </h3>
-              <div className="space-y-2">
-                <p className="text-white/95 font-semibold text-lg">B.Tech in AI & Data Science - 4th Year</p>
-                <p className="text-neon-blue font-medium">Dr. N.G.P. Institute of Technology</p>
-              </div>
             </div>
 
             {/* CTA Links */}

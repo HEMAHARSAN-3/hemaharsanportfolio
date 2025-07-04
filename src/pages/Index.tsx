@@ -89,7 +89,9 @@ const Index = () => {
         <HeroSection />
         <AboutSection />
         <SkillsSection />
-        <ProjectsSection />
+        <div className="pt-16">
+          <ProjectsSection />
+        </div>
         <ContactSection />
         <FooterSection />
       </div>

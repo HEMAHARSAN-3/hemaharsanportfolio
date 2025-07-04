@@ -31,8 +31,7 @@ const SkillsSection = () => {
         { name: "JavaScript", icon: Lightning, color: "text-yellow-400" },
         { name: "React", icon: Cpu, color: "text-cyan-400" },
         { name: "Next.js", icon: Globe, color: "text-white" },
-        { name: "Tailwind CSS", icon: Palette, color: "text-teal-400" },
-        { name: "Three.js", icon: Cpu, color: "text-red-400" }
+        { name: "Tailwind CSS", icon: Palette, color: "text-teal-400" }
       ]
     },
     {
@@ -101,7 +100,7 @@ const SkillsSection = () => {
     <section 
       id="skills" 
       ref={sectionRef} 
-      className="dark-section section-padding"
+      className="dark-section section-padding pt-32"
     >
       {/* Background Particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
