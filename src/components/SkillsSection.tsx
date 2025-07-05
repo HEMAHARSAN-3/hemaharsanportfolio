@@ -106,7 +106,7 @@ const SkillsSection = () => {
     <section 
       id="skills" 
       ref={sectionRef} 
-      className="dark-section section-padding pt-20"
+      className="dark-section section-padding pt-32"
     >
       {/* Background Particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -125,7 +125,7 @@ const SkillsSection = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
             Skills & Technologies
           </h2>

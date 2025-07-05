@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowSquareOut, Code } from 'phosphor-react';
+import { ArrowSquareOut, GithubLogo } from 'phosphor-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,45 +13,48 @@ const ProjectsSection = () => {
   const projects = [
     {
       id: 1,
-      title: "Neural Network Dashboard",
-      description: "AI-powered analytics platform with real-time data visualization",
-      tech: ["React", "D3.js", "Python", "TensorFlow"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop"
+      title: "Katomaran Todo",
+      description: "A modern todo application with clean interface and efficient task management",
+      tech: ["React", "JavaScript", "CSS", "HTML"],
+      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&h=300&fit=crop",
+      githubLink: "https://github.com/HEMAHARSAN-3/Katomaran-Todo",
+      liveDemo: null
     },
     {
       id: 2,
-      title: "Quantum Commerce",
-      description: "Next-gen e-commerce platform with AR product visualization",
-      tech: ["Next.js", "Three.js", "WebXR", "Node.js"],
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop"
+      title: "Italian Recipes Website",
+      description: "A beautiful recipe website showcasing authentic Italian cuisine and cooking traditions",
+      tech: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=500&h=300&fit=crop",
+      githubLink: "https://github.com/HEMAHARSAN-3/Italian-Recipes-Website",
+      liveDemo: "https://hemaharsan2005.neocities.org/Italian%20Recipes/italian_home"
     },
     {
       id: 3,
-      title: "Cyber Security Suite",
-      description: "Advanced threat detection system with ML algorithms",
-      tech: ["Vue.js", "Python", "Docker", "AWS"],
-      image: "https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=500&h=300&fit=crop"
+      title: "Pneumonia Prediction System",
+      description: "AI-powered medical diagnosis system using Random Forest algorithm for pneumonia detection",
+      tech: ["Python", "Machine Learning", "Random Forest", "Data Science"],
+      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=500&h=300&fit=crop",
+      githubLink: "https://github.com/HEMAHARSAN-3/PNEUMONIA-PREDICTION-USING-RANDOM-FOREST",
+      liveDemo: null
     },
     {
       id: 4,
-      title: "Holographic Interface",
-      description: "Futuristic UI components library with 3D interactions",
-      tech: ["React", "Three.js", "GSAP", "TypeScript"],
-      image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=500&h=300&fit=crop"
+      title: "My Portfolio",
+      description: "Personal portfolio website showcasing my skills, projects, and professional journey",
+      tech: ["React", "TypeScript", "Tailwind CSS", "GSAP"],
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
+      githubLink: "https://github.com/HEMAHARSAN-3/My-Portfolio",
+      liveDemo: "https://hema-harsan-portfolio.netlify.app/#home"
     },
     {
       id: 5,
-      title: "Space Mission Control",
-      description: "Real-time spacecraft monitoring and control system",
-      tech: ["Angular", "WebGL", "Socket.io", "MongoDB"],
-      image: "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=500&h=300&fit=crop"
-    },
-    {
-      id: 6,
-      title: "Crypto Trading Bot",
-      description: "Automated cryptocurrency trading with advanced algorithms",
-      tech: ["Python", "React", "Redis", "PostgreSQL"],
-      image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=500&h=300&fit=crop"
+      title: "My Resume",
+      description: "Interactive resume website with clean design and professional presentation",
+      tech: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+      image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=500&h=300&fit=crop",
+      githubLink: "https://github.com/HEMAHARSAN-3/My-Resume",
+      liveDemo: "https://my-resume-website-using-html-css.netlify.app/"
     }
   ];
 
@@ -126,16 +129,16 @@ const ProjectsSection = () => {
     <section 
       id="projects" 
       ref={sectionRef} 
-      className="dark-section section-padding pt-32"
+      className="dark-section section-padding pt-40"
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
             Featured Projects
           </h2>
           <p className="text-xl text-white/70 max-w-2xl mx-auto">
-            Explore my latest work in cutting-edge web development and digital innovation
+            Explore my latest work in web development and AI/ML applications
           </p>
         </div>
 
@@ -187,14 +190,26 @@ const ProjectsSection = () => {
                   
                   {/* Action Buttons */}
                   <div className="flex gap-3 pt-4">
-                    <button className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-neon-blue to-neon-purple text-white text-sm rounded-lg hover:scale-105 hover:shadow-lg transition-all duration-300">
-                      <ArrowSquareOut size={16} weight="light" />
-                      Live Demo
-                    </button>
-                    <button className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm text-white text-sm rounded-lg border border-white/20 hover:scale-105 hover:border-neon-blue/50 transition-all duration-300">
-                      <Code size={16} weight="light" />
-                      Code
-                    </button>
+                    {project.liveDemo && (
+                      <a 
+                        href={project.liveDemo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-neon-blue to-neon-purple text-white text-sm rounded-lg hover:scale-105 hover:shadow-lg transition-all duration-300"
+                      >
+                        <ArrowSquareOut size={16} weight="light" />
+                        Live Demo
+                      </a>
+                    )}
+                    <a 
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm text-white text-sm rounded-lg border border-white/20 hover:scale-105 hover:border-neon-blue/50 transition-all duration-300"
+                    >
+                      <GithubLogo size={16} weight="light" />
+                      GitHub
+                    </a>
                   </div>
                 </div>
               </div>
