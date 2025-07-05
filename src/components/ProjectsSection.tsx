@@ -16,7 +16,7 @@ const ProjectsSection = () => {
       title: "Katomaran Todo",
       description: "A modern todo application with clean interface and efficient task management",
       tech: ["React", "JavaScript", "CSS", "HTML"],
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&h=300&fit=crop",
+      image: "/lovable-uploads/1302bf8e-be95-40f3-a9aa-a2423eb781b6.png",
       githubLink: "https://github.com/HEMAHARSAN-3/Katomaran-Todo",
       liveDemo: null
     },
@@ -25,7 +25,7 @@ const ProjectsSection = () => {
       title: "Italian Recipes Website",
       description: "A beautiful recipe website showcasing authentic Italian cuisine and cooking traditions",
       tech: ["HTML", "CSS", "JavaScript", "Responsive Design"],
-      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=500&h=300&fit=crop",
+      image: "/lovable-uploads/d5a924a5-0609-447b-84d4-008af454f126.png",
       githubLink: "https://github.com/HEMAHARSAN-3/Italian-Recipes-Website",
       liveDemo: "https://hemaharsan2005.neocities.org/Italian%20Recipes/italian_home"
     },
@@ -34,7 +34,7 @@ const ProjectsSection = () => {
       title: "Pneumonia Prediction System",
       description: "AI-powered medical diagnosis system using Random Forest algorithm for pneumonia detection",
       tech: ["Python", "Machine Learning", "Random Forest", "Data Science"],
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=500&h=300&fit=crop",
+      image: "/lovable-uploads/633735c4-8971-46e0-9028-35e51e8a3316.png",
       githubLink: "https://github.com/HEMAHARSAN-3/PNEUMONIA-PREDICTION-USING-RANDOM-FOREST",
       liveDemo: null
     },
@@ -43,7 +43,7 @@ const ProjectsSection = () => {
       title: "My Portfolio",
       description: "Personal portfolio website showcasing my skills, projects, and professional journey",
       tech: ["React", "TypeScript", "Tailwind CSS", "GSAP"],
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
+      image: "/lovable-uploads/05645250-6446-47b1-8f36-56f2f26c76c8.png",
       githubLink: "https://github.com/HEMAHARSAN-3/My-Portfolio",
       liveDemo: "https://hema-harsan-portfolio.netlify.app/#home"
     },
@@ -52,7 +52,7 @@ const ProjectsSection = () => {
       title: "My Resume",
       description: "Interactive resume website with clean design and professional presentation",
       tech: ["HTML", "CSS", "JavaScript", "Responsive Design"],
-      image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=500&h=300&fit=crop",
+      image: "/lovable-uploads/f12a03c4-9966-4d36-976c-8a86faf6e877.png",
       githubLink: "https://github.com/HEMAHARSAN-3/My-Resume",
       liveDemo: "https://my-resume-website-using-html-css.netlify.app/"
     }
