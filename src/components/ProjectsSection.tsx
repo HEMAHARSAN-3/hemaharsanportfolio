@@ -87,20 +87,20 @@ const ProjectsSection = () => {
         }
       });
 
-      // Enhanced hover animations
+      // Reduced hover animations
       document.querySelectorAll('.project-card').forEach(card => {
         card.addEventListener('mouseenter', () => {
           gsap.to(card, {
-            y: -15,
-            scale: 1.03,
-            duration: 0.4,
-            ease: "power3.out"
+            y: -8,
+            scale: 1.02,
+            duration: 0.3,
+            ease: "power2.out"
           });
           
           gsap.to(card.querySelector('.card-glow'), {
-            opacity: 1,
-            scale: 1.1,
-            duration: 0.4
+            opacity: 0.3,
+            scale: 1.02,
+            duration: 0.3
           });
         });
 
@@ -108,14 +108,14 @@ const ProjectsSection = () => {
           gsap.to(card, {
             y: 0,
             scale: 1,
-            duration: 0.4,
-            ease: "power3.out"
+            duration: 0.3,
+            ease: "power2.out"
           });
           
           gsap.to(card.querySelector('.card-glow'), {
             opacity: 0,
             scale: 1,
-            duration: 0.4
+            duration: 0.3
           });
         });
       });
@@ -152,17 +152,17 @@ const ProjectsSection = () => {
               key={project.id}
               className="project-card relative group cursor-pointer"
             >
-              {/* Enhanced Glow Effect */}
-              <div className="card-glow absolute inset-0 bg-gradient-to-r from-neon-blue/30 to-neon-purple/30 rounded-2xl blur-xl opacity-0 transition-opacity duration-300"></div>
+              {/* Reduced Glow Effect */}
+              <div className="card-glow absolute inset-0 bg-gradient-to-r from-neon-blue/10 to-neon-purple/10 rounded-2xl blur-lg opacity-0 transition-opacity duration-300"></div>
               
               {/* Card Content */}
-              <div className="glass-card p-6 h-full relative z-10 hover:border-neon-blue/50 transition-colors duration-300">
+              <div className="glass-card p-6 h-full relative z-10 hover:border-neon-blue/30 transition-colors duration-300">
                 {/* Project Image */}
                 <div className="aspect-video rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-cyber-purple to-cyber-blue">
                   <img 
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 
@@ -181,7 +181,7 @@ const ProjectsSection = () => {
                     {project.tech.map((tech) => (
                       <span 
                         key={tech}
-                        className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-xs text-neon-blue border border-white/20 hover:border-neon-blue/50 transition-colors duration-300"
+                        className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-xs text-neon-blue border border-white/20 hover:border-neon-blue/30 transition-colors duration-300"
                       >
                         {tech}
                       </span>
@@ -195,7 +195,7 @@ const ProjectsSection = () => {
                         href={project.liveDemo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-neon-blue to-neon-purple text-white text-sm rounded-lg hover:scale-105 hover:shadow-lg transition-all duration-300"
+                        className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-neon-blue to-neon-purple text-white text-sm rounded-lg hover:scale-105 transition-all duration-300"
                       >
                         <ArrowSquareOut size={16} weight="light" />
                         Live Demo
@@ -205,7 +205,7 @@ const ProjectsSection = () => {
                       href={project.githubLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm text-white text-sm rounded-lg border border-white/20 hover:scale-105 hover:border-neon-blue/50 transition-all duration-300"
+                      className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm text-white text-sm rounded-lg border border-white/20 hover:scale-105 hover:border-neon-blue/30 transition-all duration-300"
                     >
                       <GithubLogo size={16} weight="light" />
                       GitHub
