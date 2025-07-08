@@ -1,24 +1,6 @@
-
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { 
-  Code2, 
-  Palette, 
-  Database, 
-  Rocket, 
-  GitBranch,
-  Globe,
-  Cpu,
-  Zap,
-  Paintbrush,
-  Cloud,
-  MessageCircle,
-  Bot,
-  FileCode,
-  Server,
-  Leaf
-} from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,35 +13,34 @@ const SkillsSection = () => {
       title: "Frontend Development",
       color: "from-blue-500 to-cyan-400",
       skills: [
-        { name: "HTML", icon: FileCode, color: "text-orange-400" },
-        { name: "CSS", icon: Paintbrush, color: "text-blue-400" },
-        { name: "JavaScript", icon: Zap, color: "text-yellow-400" },
-        { name: "React", icon: Cpu, color: "text-cyan-400" },
-        { name: "Next.js", icon: Globe, color: "text-white" },
-        { name: "Tailwind CSS", icon: Palette, color: "text-teal-400" }
+        { name: "HTML", icon: "/lovable-uploads/05645250-6446-47b1-8f36-56f2f26c76c8.png", iconType: "image" },
+        { name: "CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", iconType: "image" },
+        { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", iconType: "image" },
+        { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", iconType: "image" },
+        { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg", iconType: "image" }
       ]
     },
     {
       title: "Backend Development",
       color: "from-green-500 to-emerald-400",
       skills: [
-        { name: "Node.js", icon: Server, color: "text-green-400" },
-        { name: "Express", icon: Rocket, color: "text-gray-400" },
-        { name: "MongoDB", icon: Leaf, color: "text-green-500" },
-        { name: "PostgreSQL", icon: Database, color: "text-blue-500" },
-        { name: "Git", icon: GitBranch, color: "text-orange-500" },
-        { name: "Netlify", icon: Cloud, color: "text-teal-500" }
+        { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", iconType: "image" },
+        { name: "Express", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg", iconType: "image" },
+        { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg", iconType: "image" },
+        { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg", iconType: "image" },
+        { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg", iconType: "image" },
+        { name: "Netlify", icon: "https://www.vectorlogo.zone/logos/netlify/netlify-icon.svg", iconType: "image" }
       ]
     },
     {
       title: "AI Tools & Platforms",
       color: "from-purple-500 to-pink-400",
       skills: [
-        { name: "ChatGPT", icon: MessageCircle, color: "text-green-400" },
-        { name: "Deepseek", icon: Bot, color: "text-blue-400" },
-        { name: "Lovable", icon: Code2, color: "text-pink-400" },
-        { name: "Replit", icon: Code2, color: "text-orange-400" },
-        { name: "Bolt AI", icon: Zap, color: "text-yellow-400" }
+        { name: "ChatGPT", icon: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg", iconType: "image" },
+        { name: "Deepseek", icon: "🤖", iconType: "emoji" },
+        { name: "Lovable", icon: "💖", iconType: "emoji" },
+        { name: "Replit", icon: "https://upload.wikimedia.org/wikipedia/commons/b/b2/Repl.it_logo.svg", iconType: "image" },
+        { name: "Bolt AI", icon: "⚡", iconType: "emoji" }
       ]
     }
   ];
@@ -156,7 +137,6 @@ const SkillsSection = () => {
               {/* Skills Grid */}
               <div className="grid grid-cols-2 gap-4">
                 {category.skills.map((skill, index) => {
-                  const IconComponent = skill.icon;
                   return (
                     <div 
                       key={skill.name}
@@ -167,11 +147,16 @@ const SkillsSection = () => {
                       
                       <div className="relative z-10 text-center">
                         {/* Icon */}
-                        <div className="mb-3">
-                          <IconComponent 
-                            size={28} 
-                            className={skill.color}
-                          />
+                        <div className="mb-3 flex justify-center items-center h-7">
+                          {skill.iconType === "image" ? (
+                            <img 
+                              src={skill.icon} 
+                              alt={skill.name}
+                              className="w-7 h-7 object-contain"
+                            />
+                          ) : (
+                            <span className="text-2xl">{skill.icon}</span>
+                          )}
                         </div>
 
                         {/* Skill Name */}
