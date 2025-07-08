@@ -49,20 +49,13 @@ const ProjectsSection = () => {
     },
     {
       id: 5,
-      title: "My Portfolio",
-      description: "Personal portfolio website showcasing my skills, projects and achievements with modern design",
-      tech: ["React", "TypeScript", "Tailwind CSS", "GSAP"],
-      image: "/lovable-uploads/fc74fd96-8f5b-42b5-96ce-53253764223d.png",
-      githubLink: "https://github.com/HEMAHARSAN-3/portfolio",
-      liveDemo: "#"
+      title: "My-Portfolio",
+      description: "A personal portfolio website built to highlight professional skills, projects, and achievements.",
+      tech: ["HTML", "CSS", "JavaScript"],
+      image: "/lovable-uploads/79546a28-e801-40ae-9331-252f83368b9a.png",
+      githubLink: "https://github.com/HEMAHARSAN-3/My-Portfolio",
+      liveDemo: "https://hema-harsan-portfolio.netlify.app/"
     }
-  ];
-
-  const programmingLanguages = [
-    { name: "Java", color: "bg-orange-500", textColor: "text-orange-100" },
-    { name: "C", color: "bg-blue-600", textColor: "text-blue-100" },
-    { name: "Python", color: "bg-green-600", textColor: "text-green-100" },
-    { name: "R", color: "bg-purple-600", textColor: "text-purple-100" }
   ];
 
   useEffect(() => {
@@ -89,23 +82,6 @@ const ProjectsSection = () => {
               duration: 0.8, 
               stagger: 0.2,
               ease: "power3.out"
-            }
-          );
-          
-          gsap.fromTo(".programming-lang",
-            { 
-              opacity: 0, 
-              y: 30, 
-              scale: 0.9
-            },
-            { 
-              opacity: 1, 
-              y: 0, 
-              scale: 1,
-              duration: 0.6, 
-              stagger: 0.1,
-              ease: "power2.out",
-              delay: 0.5
             }
           );
         }
@@ -164,21 +140,6 @@ const ProjectsSection = () => {
           <p className="text-xl text-white/70 max-w-2xl mx-auto">
             Explore my latest work in web development and AI/ML applications
           </p>
-        </div>
-
-        {/* Programming Languages */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-white text-center mb-8">Programming Languages</h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            {programmingLanguages.map((lang) => (
-              <div 
-                key={lang.name}
-                className={`programming-lang px-6 py-3 ${lang.color} ${lang.textColor} rounded-full font-semibold text-lg shadow-lg hover:scale-110 transition-all duration-300 cursor-pointer`}
-              >
-                {lang.name}
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* Projects Grid */}
