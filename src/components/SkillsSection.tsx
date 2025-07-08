@@ -3,19 +3,22 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { 
-  Code, 
-  PaintBrush, 
+  Code2, 
+  Palette, 
   Database, 
   Rocket, 
   GitBranch,
   Globe,
   Cpu,
-  Lightning,
-  Palette,
-  CloudArrowUp,
-  ChatCircle,
-  Robot
-} from 'phosphor-react';
+  Zap,
+  Paintbrush,
+  Cloud,
+  MessageCircle,
+  Bot,
+  FileCode,
+  Server,
+  Leaf
+} from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,9 +31,9 @@ const SkillsSection = () => {
       title: "Frontend Development",
       color: "from-blue-500 to-cyan-400",
       skills: [
-        { name: "HTML", icon: Code, color: "text-orange-400" },
-        { name: "CSS", icon: PaintBrush, color: "text-blue-400" },
-        { name: "JavaScript", icon: Lightning, color: "text-yellow-400" },
+        { name: "HTML", icon: FileCode, color: "text-orange-400" },
+        { name: "CSS", icon: Paintbrush, color: "text-blue-400" },
+        { name: "JavaScript", icon: Zap, color: "text-yellow-400" },
         { name: "React", icon: Cpu, color: "text-cyan-400" },
         { name: "Next.js", icon: Globe, color: "text-white" },
         { name: "Tailwind CSS", icon: Palette, color: "text-teal-400" }
@@ -40,23 +43,23 @@ const SkillsSection = () => {
       title: "Backend Development",
       color: "from-green-500 to-emerald-400",
       skills: [
-        { name: "Node.js", icon: Database, color: "text-green-400" },
+        { name: "Node.js", icon: Server, color: "text-green-400" },
         { name: "Express", icon: Rocket, color: "text-gray-400" },
-        { name: "MongoDB", icon: Database, color: "text-green-500" },
+        { name: "MongoDB", icon: Leaf, color: "text-green-500" },
         { name: "PostgreSQL", icon: Database, color: "text-blue-500" },
         { name: "Git", icon: GitBranch, color: "text-orange-500" },
-        { name: "Netlify", icon: CloudArrowUp, color: "text-teal-500" }
+        { name: "Netlify", icon: Cloud, color: "text-teal-500" }
       ]
     },
     {
       title: "AI Tools & Platforms",
       color: "from-purple-500 to-pink-400",
       skills: [
-        { name: "ChatGPT", icon: ChatCircle, color: "text-green-400" },
-        { name: "Deepseek", icon: Robot, color: "text-blue-400" },
-        { name: "Lovable", icon: Code, color: "text-pink-400" },
-        { name: "Replit", icon: Code, color: "text-orange-400" },
-        { name: "Bolt AI", icon: Lightning, color: "text-yellow-400" }
+        { name: "ChatGPT", icon: MessageCircle, color: "text-green-400" },
+        { name: "Deepseek", icon: Bot, color: "text-blue-400" },
+        { name: "Lovable", icon: Code2, color: "text-pink-400" },
+        { name: "Replit", icon: Code2, color: "text-orange-400" },
+        { name: "Bolt AI", icon: Zap, color: "text-yellow-400" }
       ]
     }
   ];
@@ -167,7 +170,6 @@ const SkillsSection = () => {
                         <div className="mb-3">
                           <IconComponent 
                             size={28} 
-                            weight="light" 
                             className={skill.color}
                           />
                         </div>

@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { GithubLogo, LinkedinLogo, PaperPlaneTilt, Envelope } from 'phosphor-react';
+import { GithubLogo, LinkedinLogo, PaperPlaneTilt, Envelope, MapPin } from 'phosphor-react';
 import emailjs from '@emailjs/browser';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -177,6 +177,10 @@ const ContactSection = () => {
                   <a href="mailto:hemaharsan3@gmail.com" className="hover:text-neon-blue transition-colors duration-300">
                     hemaharsan3@gmail.com
                   </a>
+                </div>
+                <div className="flex items-center gap-3 text-white/70">
+                  <MapPin size={20} weight="light" className="text-neon-purple" />
+                  <span>Coimbatore, Tamil Nadu, India</span>
                 </div>
               </div>
               

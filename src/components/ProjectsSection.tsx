@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -40,15 +39,6 @@ const ProjectsSection = () => {
     },
     {
       id: 4,
-      title: "My Portfolio",
-      description: "Personal portfolio website showcasing my skills, projects, and professional journey",
-      tech: ["React", "TypeScript", "Tailwind CSS", "GSAP"],
-      image: "/lovable-uploads/05645250-6446-47b1-8f36-56f2f26c76c8.png",
-      githubLink: "https://github.com/HEMAHARSAN-3/My-Portfolio",
-      liveDemo: "https://hema-harsan-portfolio.netlify.app/#home"
-    },
-    {
-      id: 5,
       title: "My Resume",
       description: "Interactive resume website with clean design and professional presentation",
       tech: ["HTML", "CSS", "JavaScript", "Responsive Design"],
