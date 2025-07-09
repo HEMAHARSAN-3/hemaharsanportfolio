@@ -42,35 +42,37 @@ const HeroSection = () => {
         />
       </div>
       
-      {/* Content Overlay */}
+      {/* Content Overlay - Moved to left center */}
       <div className="hero-content relative z-10 section-padding w-full">
-        <div className="max-w-4xl mx-auto text-center md:text-left">
-          {/* Main Headline */}
-          <h1 className="mb-4 md:mb-6 leading-tight">
-            <span className="text-white text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold block mb-2">
-              Hi, I'm
-            </span>
-            <span className="text-gradient text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold block mb-2">
-              Hema Harsan
-            </span>
-            <span className="text-white/80 text-xl md:text-3xl lg:text-4xl xl:text-5xl font-light block">
-              Full Stack Developer
-            </span>
-          </h1>
-          
-          {/* Subtitle */}
-          <p className="responsive-text-lg text-white/70 mb-8 md:mb-12 max-w-2xl mx-auto md:mx-0 font-light leading-relaxed">
-            Crafting immersive digital experiences with cutting-edge technology 
-            and futuristic design principles.
-          </p>
-          
-          {/* CTA Button */}
-          <button 
-            className="cta-button cyber-btn responsive-text-lg"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            Hire Me
-          </button>
+        <div className="max-w-4xl flex items-center min-h-screen">
+          <div className="text-left">
+            {/* Main Headline */}
+            <h1 className="mb-4 md:mb-6 leading-tight">
+              <span className="text-white text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold block mb-2">
+                Hi, I'm
+              </span>
+              <span className="text-gradient text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold block mb-2">
+                Hema Harsan
+              </span>
+              <span className="text-white/80 text-xl md:text-3xl lg:text-4xl xl:text-5xl font-light block">
+                Full Stack Developer
+              </span>
+            </h1>
+            
+            {/* Subtitle */}
+            <p className="responsive-text-lg text-white/70 mb-8 md:mb-12 max-w-2xl font-light leading-relaxed">
+              Crafting immersive digital experiences with cutting-edge technology 
+              and futuristic design principles.
+            </p>
+            
+            {/* CTA Button */}
+            <button 
+              className="cta-button cyber-btn responsive-text-lg"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Hire Me
+            </button>
+          </div>
         </div>
       </div>
       
