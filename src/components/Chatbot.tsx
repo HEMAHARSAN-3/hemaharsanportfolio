@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send } from 'lucide-react';
 import { Button } from './ui/button';
@@ -15,7 +14,7 @@ const Chatbot = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: "Hi! I'm Hema's portfolio assistant. Ask me anything about his skills, projects, or experience!",
+      text: "Hello! I'm Hema's AI assistant. Feel free to ask me anything about his skills, projects, or professional experience!",
       isUser: false,
       timestamp: new Date()
     }
@@ -176,7 +175,7 @@ Design Tools: ${portfolioData.skills.design.join(', ')}`;
                   className={`flex ${message.isUser ? 'justify-end' : 'justify-start'}`}
                 >
                   <div
-                    className={`max-w-xs px-3 py-2 rounded-lg text-sm ${
+                    className={`max-w-xs px-3 py-2 rounded-lg text-sm transition-all duration-300 ${
                       message.isUser
                         ? 'bg-gradient-to-r from-neon-blue to-neon-purple text-white'
                         : 'bg-white/10 text-white backdrop-blur-sm'
@@ -198,12 +197,12 @@ Design Tools: ${portfolioData.skills.design.join(', ')}`;
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyPress={handleKeyPress}
                   placeholder="Ask about skills, projects..."
-                  className="flex-1 cyber-input text-sm"
+                  className="flex-1 cyber-input text-sm transition-all duration-300"
                 />
                 <Button
                   onClick={handleSendMessage}
                   disabled={!inputValue.trim()}
-                  className="cyber-btn px-3 py-2"
+                  className="cyber-btn px-3 py-2 transition-all duration-300"
                 >
                   <Send size={16} />
                 </Button>
