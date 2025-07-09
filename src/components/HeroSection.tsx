@@ -8,19 +8,19 @@ const HeroSection = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Spline fade in from top
+      // Optimized Spline fade in from top
       gsap.fromTo(splineRef.current,
-        { opacity: 0, y: -100 },
-        { opacity: 1, y: 0, duration: 2, delay: 4, ease: "power2.out" }
+        { opacity: 0, y: -50 },
+        { opacity: 1, y: 0, duration: 1.5, delay: 4, ease: "power2.out" }
       );
 
-      // CTA button pulse animation
+      // Optimized CTA button pulse animation
       gsap.to(".cta-button", {
-        scale: 1.05,
-        duration: 2,
+        scale: 1.02,
+        duration: 1.5,
         repeat: -1,
         yoyo: true,
-        ease: "power2.inOut"
+        ease: "power1.inOut"
       });
 
     }, heroRef);
@@ -29,7 +29,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section id="home" ref={heroRef} className="relative min-h-screen flex items-center">
+    <section id="home" ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
       {/* Spline 3D Background */}
       <div ref={splineRef} className="absolute inset-0 w-full h-full">
         <iframe 
@@ -38,31 +38,35 @@ const HeroSection = () => {
           width='100%' 
           height='100%'
           className="w-full h-full"
+          loading="lazy"
         />
       </div>
       
       {/* Content Overlay */}
       <div className="hero-content relative z-10 section-padding w-full">
-        <div className="max-w-4xl">
+        <div className="max-w-4xl mx-auto text-center md:text-left">
           {/* Main Headline */}
-          <h1 className="mb-6 leading-tight">
-            <span className="text-white text-5xl md:text-6xl lg:text-7xl font-bold">Hi, I'm </span>
-            <span className="text-gradient text-5xl md:text-6xl lg:text-7xl font-bold">Hema Harsan</span>
-            <br />
-            <span className="text-white/80 text-3xl md:text-4xl lg:text-5xl font-light">
+          <h1 className="mb-4 md:mb-6 leading-tight">
+            <span className="text-white text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold block mb-2">
+              Hi, I'm
+            </span>
+            <span className="text-gradient text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold block mb-2">
+              Hema Harsan
+            </span>
+            <span className="text-white/80 text-xl md:text-3xl lg:text-4xl xl:text-5xl font-light block">
               Full Stack Developer
             </span>
           </h1>
           
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-white/70 mb-12 max-w-2xl font-light leading-relaxed">
+          <p className="responsive-text-lg text-white/70 mb-8 md:mb-12 max-w-2xl mx-auto md:mx-0 font-light leading-relaxed">
             Crafting immersive digital experiences with cutting-edge technology 
             and futuristic design principles.
           </p>
           
           {/* CTA Button */}
           <button 
-            className="cta-button cyber-btn text-lg md:text-xl"
+            className="cta-button cyber-btn responsive-text-lg"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Hire Me

@@ -20,51 +20,59 @@ const Index = () => {
   useEffect(() => {
     // Initialize smooth scroll and animations
     const ctx = gsap.context(() => {
-      // Set initial states
-      gsap.set([".hero-content", ".about-section", ".skills-section", ".projects-section", ".achievements-section", ".contact-section"], {
-        opacity: 0,
-        y: 50,
-        filter: "blur(10px)"
+      // Smooth scroll configuration
+      gsap.config({
+        force3D: true,
       });
 
-      // Create timeline for page load
+      // Set initial states with better performance
+      gsap.set([".hero-content", ".about-section", ".skills-section", ".projects-section", ".achievements-section", ".contact-section"], {
+        opacity: 0,
+        y: 30,
+        filter: "blur(5px)",
+        will: "change"
+      });
+
+      // Create optimized timeline for page load
       const tl = gsap.timeline();
       
       tl.to(".hero-content", {
         opacity: 1,
         y: 0,
         filter: "blur(0px)",
-        duration: 1.5,
-        ease: "power3.out",
-        delay: 3.5 // After preloader
+        duration: 1.2,
+        ease: "power2.out",
+        delay: 3.5
       });
 
-      // Section animations on scroll
-      [".about-section", ".skills-section", ".projects-section", ".achievements-section", ".contact-section"].forEach((selector, index) => {
+      // Optimized section animations on scroll
+      [".about-section", ".skills-section", ".projects-section", ".achievements-section", ".contact-section"].forEach((selector) => {
         ScrollTrigger.create({
           trigger: selector,
-          start: "top 80%",
+          start: "top 85%",
+          end: "bottom 15%",
+          toggleActions: "play none none reverse",
           onEnter: () => {
             gsap.to(selector, {
               opacity: 1,
               y: 0,
               filter: "blur(0px)",
-              duration: 1.2,
-              ease: "power3.out"
+              duration: 0.8,
+              ease: "power2.out"
             });
           }
         });
       });
 
-      // Enhanced floating background elements
+      // Optimized floating background elements
       gsap.to(".floating-orb", {
-        y: -25,
-        x: 15,
-        duration: 4,
+        y: -15,
+        x: 8,
+        duration: 3,
         repeat: -1,
         yoyo: true,
-        ease: "power1.inOut",
-        stagger: 0.5
+        ease: "sine.inOut",
+        stagger: 0.3
       });
 
     }, containerRef);
@@ -75,16 +83,16 @@ const Index = () => {
   return (
     <>
       <Preloader />
-      <div ref={containerRef} className="relative min-h-screen">
+      <div ref={containerRef} className="relative min-h-screen overflow-x-hidden">
         <Navigation />
         
-        {/* Enhanced background floating orbs */}
+        {/* Optimized background floating orbs */}
         <div className="fixed inset-0 overflow-hidden pointer-events-none">
-          <div className="floating-orb w-32 h-32 top-20 left-10 opacity-30"></div>
-          <div className="floating-orb w-24 h-24 top-1/3 right-20 opacity-20"></div>
-          <div className="floating-orb w-40 h-40 bottom-40 left-1/4 opacity-25"></div>
-          <div className="floating-orb w-28 h-28 top-1/2 right-1/3 opacity-15"></div>
-          <div className="floating-orb w-20 h-20 top-3/4 left-1/2 opacity-20"></div>
+          <div className="floating-orb w-20 h-20 md:w-32 md:h-32 top-20 left-4 md:left-10 opacity-20 md:opacity-30"></div>
+          <div className="floating-orb w-16 h-16 md:w-24 md:h-24 top-1/3 right-10 md:right-20 opacity-15 md:opacity-20"></div>
+          <div class="floating-orb w-24 h-24 md:w-40 md:h-40 bottom-40 left-1/4 opacity-20 md:opacity-25"></div>
+          <div className="floating-orb w-18 h-18 md:w-28 md:h-28 top-1/2 right-1/3 opacity-10 md:opacity-15"></div>
+          <div className="floating-orb w-12 h-12 md:w-20 md:h-20 top-3/4 left-1/2 opacity-15 md:opacity-20"></div>
         </div>
 
         <HeroSection />

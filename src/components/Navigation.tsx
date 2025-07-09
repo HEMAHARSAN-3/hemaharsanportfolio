@@ -9,10 +9,10 @@ const Navigation = () => {
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Navigation fade in
+    // Optimized navigation fade in
     gsap.fromTo(navRef.current, 
-      { opacity: 0, y: -20 },
-      { opacity: 1, y: 0, duration: 1, delay: 4 }
+      { opacity: 0, y: -15 },
+      { opacity: 1, y: 0, duration: 0.8, delay: 4 }
     );
   }, []);
 
@@ -22,14 +22,14 @@ const Navigation = () => {
     if (!isMenuOpen) {
       gsap.to(mobileMenuRef.current, {
         x: "0%",
-        duration: 0.5,
-        ease: "power3.out"
+        duration: 0.4,
+        ease: "power2.out"
       });
     } else {
       gsap.to(mobileMenuRef.current, {
         x: "100%",
-        duration: 0.5,
-        ease: "power3.out"
+        duration: 0.4,
+        ease: "power2.out"
       });
     }
   };
@@ -37,32 +37,32 @@ const Navigation = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
     setIsMenuOpen(false);
     gsap.to(mobileMenuRef.current, {
       x: "100%",
-      duration: 0.5,
-      ease: "power3.out"
+      duration: 0.4,
+      ease: "power2.out"
     });
   };
 
   return (
     <>
-      <nav ref={navRef} className="fixed top-0 left-0 right-0 z-40 px-6 py-6">
-        <div className="glass-card px-6 py-4 flex justify-between items-center max-w-6xl mx-auto">
+      <nav ref={navRef} className="fixed top-0 left-0 right-0 z-40 px-4 md:px-6 py-4 md:py-6">
+        <div className="glass-card px-4 md:px-6 py-3 md:py-4 flex justify-between items-center max-w-6xl mx-auto">
           {/* Logo */}
-          <div className="text-2xl font-bold text-gradient">
+          <div className="text-xl md:text-2xl font-bold text-gradient">
             HH
           </div>
           
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-6 lg:space-x-8">
             {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
-                className="animated-link text-white/80 hover:text-white transition-colors duration-300 hover:text-neon-blue"
+                className="animated-link text-white/80 hover:text-white transition-colors duration-300 hover:text-neon-blue text-sm lg:text-base"
               >
                 {item}
               </button>
@@ -74,7 +74,7 @@ const Navigation = () => {
             onClick={toggleMenu}
             className="md:hidden text-white p-2 hover:scale-110 transition-transform duration-300 z-50 relative"
           >
-            {isMenuOpen ? <X size={24} weight="light" /> : <List size={24} weight="light" />}
+            {isMenuOpen ? <X size={20} weight="light" /> : <List size={20} weight="light" />}
           </button>
         </div>
       </nav>
@@ -90,16 +90,16 @@ const Navigation = () => {
       {/* Mobile Menu */}
       <div 
         ref={mobileMenuRef}
-        className="fixed top-0 right-0 h-full w-80 max-w-full bg-cyber-darker z-50 transform translate-x-full md:hidden"
+        className="fixed top-0 right-0 h-full w-72 max-w-full bg-cyber-darker z-50 transform translate-x-full md:hidden"
       >
-        <div className="flex flex-col h-full pt-24 px-8">
+        <div className="flex flex-col h-full pt-20 px-6">
           {/* Menu Items */}
-          <div className="flex flex-col space-y-8">
+          <div className="flex flex-col space-y-6">
             {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
-                className="text-left text-2xl text-white/80 hover:text-neon-blue transition-colors duration-300 hover:scale-105 transform py-2"
+                className="text-left text-xl text-white/80 hover:text-neon-blue transition-colors duration-300 hover:scale-105 transform py-3 border-b border-white/10 last:border-b-0"
               >
                 {item}
               </button>
