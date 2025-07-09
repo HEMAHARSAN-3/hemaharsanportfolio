@@ -11,6 +11,7 @@ import AchievementsSection from '../components/AchievementsSection';
 import ContactSection from '../components/ContactSection';
 import FooterSection from '../components/FooterSection';
 import Navigation from '../components/Navigation';
+import Chatbot from '../components/Chatbot';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -90,7 +91,7 @@ const Index = () => {
         <div className="fixed inset-0 overflow-hidden pointer-events-none">
           <div className="floating-orb w-20 h-20 md:w-32 md:h-32 top-20 left-4 md:left-10 opacity-20 md:opacity-30"></div>
           <div className="floating-orb w-16 h-16 md:w-24 md:h-24 top-1/3 right-10 md:right-20 opacity-15 md:opacity-20"></div>
-          <div class="floating-orb w-24 h-24 md:w-40 md:h-40 bottom-40 left-1/4 opacity-20 md:opacity-25"></div>
+          <div className="floating-orb w-24 h-24 md:w-40 md:h-40 bottom-40 left-1/4 opacity-20 md:opacity-25"></div>
           <div className="floating-orb w-18 h-18 md:w-28 md:h-28 top-1/2 right-1/3 opacity-10 md:opacity-15"></div>
           <div className="floating-orb w-12 h-12 md:w-20 md:h-20 top-3/4 left-1/2 opacity-15 md:opacity-20"></div>
         </div>
@@ -102,6 +103,8 @@ const Index = () => {
         <AchievementsSection />
         <ContactSection />
         <FooterSection />
+        
+        <Chatbot />
       </div>
     </>
   );
