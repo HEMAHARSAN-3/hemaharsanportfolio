@@ -156,19 +156,19 @@ const ProjectsSection = () => {
               <div className="card-glow absolute inset-0 bg-gradient-to-r from-neon-blue/10 to-neon-purple/10 rounded-2xl blur-lg opacity-0 transition-opacity duration-300"></div>
               
               {/* Card Content */}
-              <div className="glass-card p-6 h-full relative z-10 hover:border-neon-blue/30 transition-colors duration-300">
+              <div className="glass-card p-6 h-full relative z-10">
                 {/* Project Image */}
                 <div className="aspect-video rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-cyber-purple to-cyber-blue">
                   <img 
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 
                 {/* Project Info */}
                 <div className="space-y-4">
-                  <h3 className="text-xl font-bold text-white group-hover:text-neon-blue transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-white">
                     {project.title}
                   </h3>
                   
@@ -181,7 +181,7 @@ const ProjectsSection = () => {
                     {project.tech.map((tech) => (
                       <span 
                         key={tech}
-                        className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-xs text-neon-blue border border-white/20 hover:border-neon-blue/30 transition-colors duration-300"
+                        className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-xs text-neon-blue border border-white/20"
                       >
                         {tech}
                       </span>
@@ -195,7 +195,7 @@ const ProjectsSection = () => {
                         href={project.liveDemo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-neon-blue to-neon-purple text-white text-sm rounded-lg hover:scale-105 transition-all duration-300"
+                        className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-neon-blue to-neon-purple text-white text-sm rounded-lg"
                       >
                         <ArrowSquareOut size={16} weight="light" />
                         Live Demo
@@ -205,7 +205,7 @@ const ProjectsSection = () => {
                       href={project.githubLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm text-white text-sm rounded-lg border border-white/20 hover:scale-105 hover:border-neon-blue/30 transition-all duration-300"
+                      className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm text-white text-sm rounded-lg border border-white/20"
                     >
                       <GithubLogo size={16} weight="light" />
                       GitHub

@@ -119,7 +119,7 @@ const ContactSection = () => {
                 placeholder="Your Name"
                 value={formData.name}
                 onChange={handleInputChange}
-                className="cyber-input hover:border-neon-purple/50 transition-colors duration-300"
+                className="cyber-input"
                 required
               />
             </div>
@@ -131,7 +131,7 @@ const ContactSection = () => {
                 placeholder="Your Email"
                 value={formData.email}
                 onChange={handleInputChange}
-                className="cyber-input hover:border-neon-purple/50 transition-colors duration-300"
+                className="cyber-input"
                 required
               />
             </div>
@@ -143,7 +143,7 @@ const ContactSection = () => {
                 value={formData.message}
                 onChange={handleInputChange}
                 rows={6}
-                className="cyber-input resize-none hover:border-neon-purple/50 transition-colors duration-300"
+                className="cyber-input resize-none"
                 required
               />
             </div>
@@ -159,7 +159,7 @@ const ContactSection = () => {
 
           {/* Contact Info */}
           <div className="space-y-8">
-            <div className="glass-card p-8 hover:border-neon-blue/50 transition-colors duration-300">
+            <div className="glass-card p-8">
               <h3 className="text-2xl font-bold text-white mb-6">Get in Touch</h3>
               <div className="space-y-4 text-white/80">
                 <p>
@@ -174,7 +174,7 @@ const ContactSection = () => {
               <div className="mt-6 space-y-3">
                 <div className="flex items-center gap-3 text-white/70">
                   <Envelope size={20} weight="light" className="text-neon-blue" />
-                  <a href="mailto:hemaharsan3@gmail.com" className="hover:text-neon-blue transition-colors duration-300">
+                  <a href="mailto:hemaharsan3@gmail.com">
                     hemaharsan3@gmail.com
                   </a>
                 </div>
@@ -190,17 +190,17 @@ const ContactSection = () => {
                   href="https://github.com/HEMAHARSAN-3" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="social-icon relative p-3 glass-card hover:scale-110 transition-transform duration-300 ripple-effect"
+                  className="social-icon relative p-3 glass-card ripple-effect"
                 >
-                  <GithubLogo size={24} weight="light" className="text-white hover:text-neon-blue transition-colors duration-300" />
+                  <GithubLogo size={24} weight="light" className="text-white" />
                 </a>
                 <a 
                   href="https://www.linkedin.com/in/hema-harsan-r" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="social-icon relative p-3 glass-card hover:scale-110 transition-transform duration-300 ripple-effect"
+                  className="social-icon relative p-3 glass-card ripple-effect"
                 >
-                  <LinkedinLogo size={24} weight="light" className="text-neon-blue hover:text-neon-purple transition-colors duration-300" />
+                  <LinkedinLogo size={24} weight="light" className="text-neon-blue" />
                 </a>
               </div>
             </div>

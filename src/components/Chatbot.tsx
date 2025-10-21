@@ -151,7 +151,7 @@ Design Tools: ${portfolioData.skills.design.join(', ')}`;
       <div className="fixed bottom-6 right-6 z-50">
         <Button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-14 h-14 rounded-full shadow-lg cyber-btn hover:scale-110 transition-all duration-300"
+          className="w-14 h-14 rounded-full shadow-lg cyber-btn"
         >
           {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
         </Button>
@@ -175,7 +175,7 @@ Design Tools: ${portfolioData.skills.design.join(', ')}`;
                   className={`flex ${message.isUser ? 'justify-end' : 'justify-start'}`}
                 >
                   <div
-                    className={`max-w-xs px-3 py-2 rounded-lg text-sm transition-all duration-300 ${
+                    className={`max-w-xs px-3 py-2 rounded-lg text-sm ${
                       message.isUser
                         ? 'bg-gradient-to-r from-neon-blue to-neon-purple text-white'
                         : 'bg-white/10 text-white backdrop-blur-sm'
@@ -197,12 +197,12 @@ Design Tools: ${portfolioData.skills.design.join(', ')}`;
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyPress={handleKeyPress}
                   placeholder="Ask about skills, projects..."
-                  className="flex-1 cyber-input text-sm transition-all duration-300"
+                  className="flex-1 cyber-input text-sm"
                 />
                 <Button
                   onClick={handleSendMessage}
                   disabled={!inputValue.trim()}
-                  className="cyber-btn px-3 py-2 transition-all duration-300"
+                  className="cyber-btn px-3 py-2"
                 >
                   <Send size={16} />
                 </Button>

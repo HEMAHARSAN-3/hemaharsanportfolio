@@ -83,17 +83,17 @@ const FooterSection = () => {
                 href="https://github.com/HEMAHARSAN-3" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="relative p-2 glass-card hover:scale-110 transition-transform duration-300 ripple-effect"
+                className="relative p-2 glass-card ripple-effect"
               >
-                <GithubLogo size={20} weight="light" className="text-white hover:text-neon-blue transition-colors duration-300" />
+                <GithubLogo size={20} weight="light" className="text-white" />
               </a>
               <a 
                 href="https://www.linkedin.com/in/hema-harsan-r" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="relative p-2 glass-card hover:scale-110 transition-transform duration-300 ripple-effect"
+                className="relative p-2 glass-card ripple-effect"
               >
-                <LinkedinLogo size={20} weight="light" className="text-neon-blue hover:text-neon-purple transition-colors duration-300" />
+                <LinkedinLogo size={20} weight="light" className="text-neon-blue" />
               </a>
             </div>
           </div>
@@ -106,7 +106,7 @@ const FooterSection = () => {
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className="animated-link block text-white/70 hover:text-neon-blue transition-colors duration-300"
+                  className="animated-link block text-white/70"
                 >
                   {item}
                 </button>
@@ -121,7 +121,7 @@ const FooterSection = () => {
               <p>Ready to start your next project?</p>
               <button
                 onClick={() => scrollToSection('contact')}
-                className="animated-link text-neon-blue hover:text-neon-purple transition-colors duration-300"
+                className="animated-link text-neon-blue"
               >
                 Get in touch →
               </button>
@@ -133,7 +133,7 @@ const FooterSection = () => {
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-center items-center gap-4">
           <button
             onClick={scrollToTop}
-            className="px-4 py-2 glass-card text-sm text-white/80 hover:text-white hover:scale-105 transition-all duration-300"
+            className="px-4 py-2 glass-card text-sm text-white/80"
           >
             Back to Top ↑
           </button>

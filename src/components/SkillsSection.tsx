@@ -136,7 +136,7 @@ const SkillsSection = () => {
           {skillCategories.map((category, categoryIndex) => (
             <div 
               key={category.title}
-              className="skill-category glass-card p-8 rounded-2xl hover:scale-105 transition-all duration-300"
+              className="skill-category glass-card p-8 rounded-2xl"
             >
               {/* Category Header */}
               <div className="text-center mb-6">
@@ -150,12 +150,9 @@ const SkillsSection = () => {
                   return (
                     <div 
                       key={skill.name}
-                      className="flex flex-col items-center p-4 glass-card rounded-xl hover:scale-105 transition-all duration-300 cursor-pointer group"
+                      className="flex flex-col items-center p-4 glass-card rounded-xl cursor-pointer"
                     >
-                      {/* Glow Effect */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/10 to-neon-purple/10 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      
-                      <div className="relative z-10 text-center">
+                      <div className="text-center">
                         {/* Icon */}
                         <div className="mb-3 flex justify-center items-center h-7">
                           {skill.iconType === "image" ? (
@@ -170,7 +167,7 @@ const SkillsSection = () => {
                         </div>
 
                         {/* Skill Name */}
-                        <h4 className="text-sm font-semibold text-white/90 group-hover:text-neon-blue transition-colors duration-300">
+                        <h4 className="text-sm font-semibold text-white/90">
                           {skill.name}
                         </h4>
                       </div>

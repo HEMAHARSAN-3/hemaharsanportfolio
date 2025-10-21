@@ -62,7 +62,7 @@ const Navigation = () => {
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
-                className="animated-link text-white/80 hover:text-white transition-colors duration-300 hover:text-neon-blue text-sm lg:text-base"
+                className="animated-link text-white/80 text-sm lg:text-base"
               >
                 {item}
               </button>
@@ -72,7 +72,7 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden text-white p-2 hover:scale-110 transition-transform duration-300 z-50 relative"
+            className="md:hidden text-white p-2 z-50 relative"
           >
             {isMenuOpen ? <X size={20} weight="light" /> : <List size={20} weight="light" />}
           </button>
@@ -99,7 +99,7 @@ const Navigation = () => {
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
-                className="text-left text-xl text-white/80 hover:text-neon-blue transition-colors duration-300 hover:scale-105 transform py-3 border-b border-white/10 last:border-b-0"
+                className="text-left text-xl text-white/80 py-3 border-b border-white/10 last:border-b-0"
               >
                 {item}
               </button>

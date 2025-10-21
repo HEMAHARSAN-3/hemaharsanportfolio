@@ -116,7 +116,7 @@ const AboutSection = () => {
 
             {/* Enhanced content cards */}
             <div className="space-y-6">
-              <div className="glass-card p-6 hover:scale-[1.02] transition-transform duration-300">
+              <div className="glass-card p-6">
                 <p className="text-lg md:text-xl text-white/90 leading-relaxed">
                   Hi, I'm <span className="text-gradient font-semibold">Hema Harsan R</span> — a passionate B.Tech student specializing in 
                   <span className="text-neon-blue font-medium"> Artificial Intelligence & Data Science</span>, with a deep love for 
@@ -124,7 +124,7 @@ const AboutSection = () => {
                 </p>
               </div>
 
-              <div className="glass-card p-6 hover:scale-[1.02] transition-transform duration-300">
+              <div className="glass-card p-6">
                 <p className="text-lg md:text-xl text-white/80 leading-relaxed">
                   Currently in my <span className="text-neon-pink font-medium">4th year at Dr. N.G.P. Institute of Technology</span>, 
                   I love building smart, meaningful solutions that blend cutting-edge technology with creative innovation. 
@@ -134,13 +134,13 @@ const AboutSection = () => {
               </div>
 
               {/* Skills highlight */}
-              <div className="glass-card p-6 hover:scale-[1.02] transition-transform duration-300">
+              <div className="glass-card p-6">
                 <h3 className="text-xl font-semibold text-gradient mb-3">What I Do</h3>
                 <div className="flex flex-wrap gap-3">
                   {['AI/ML Development', 'Full Stack Web Apps', 'Data Science', 'UI/UX Design'].map((skill) => (
                     <span 
                       key={skill}
-                      className="px-4 py-2 bg-gradient-to-r from-neon-blue/20 to-neon-purple/20 backdrop-blur-sm rounded-full text-sm text-white border border-white/20 hover:border-neon-blue/50 transition-colors duration-300"
+                      className="px-4 py-2 bg-gradient-to-r from-neon-blue/20 to-neon-purple/20 backdrop-blur-sm rounded-full text-sm text-white border border-white/20"
                     >
                       {skill}
                     </span>
@@ -153,17 +153,17 @@ const AboutSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 pt-6">
               <a 
                 href="#projects" 
-                className="group flex items-center justify-center gap-3 px-6 py-3 bg-gradient-to-r from-neon-blue to-neon-purple text-white font-semibold rounded-xl hover:scale-105 transition-all duration-300 hover:shadow-2xl"
+                className="flex items-center justify-center gap-3 px-6 py-3 bg-gradient-to-r from-neon-blue to-neon-purple text-white font-semibold rounded-xl"
               >
                 View My Work 
-                <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                <span>→</span>
               </a>
               <a 
                 href="#contact" 
-                className="group flex items-center justify-center gap-3 px-6 py-3 glass-card border border-white/30 text-white font-semibold rounded-xl hover:scale-105 hover:border-neon-purple/50 transition-all duration-300"
+                className="flex items-center justify-center gap-3 px-6 py-3 glass-card border border-white/30 text-white font-semibold rounded-xl"
               >
                 Let's Connect 
-                <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                <span>→</span>
               </a>
             </div>
           </div>
