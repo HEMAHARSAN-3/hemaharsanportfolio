@@ -23,7 +23,7 @@ const Preloader = () => {
     let progress = { value: 0 };
     tl.to(progress, {
       value: 100,
-      duration: 2,
+      duration: 1,
       ease: "power2.out",
       onUpdate: function() {
         const val = Math.round(progress.value);
@@ -40,11 +40,11 @@ const Preloader = () => {
     tl.to([logoRef.current, progressRef.current?.parentElement, percentageRef.current], {
       opacity: 0,
       y: -20,
-      duration: 0.6,
-      delay: 0.3
+      duration: 0.4,
+      delay: 0.1
     }).to(preloaderRef.current, {
       opacity: 0,
-      duration: 0.8,
+      duration: 0.4,
       ease: "power2.out",
       onComplete: () => {
         if (preloaderRef.current) {

@@ -26,12 +26,10 @@ const Index = () => {
         force3D: true,
       });
 
-      // Set initial states with better performance
+      // Set initial states - simplified
       gsap.set([".hero-content", ".about-section", ".skills-section", ".projects-section", ".achievements-section", ".contact-section"], {
         opacity: 0,
-        y: 30,
-        filter: "blur(5px)",
-        will: "change"
+        y: 20
       });
 
       // Create optimized timeline for page load
@@ -40,40 +38,37 @@ const Index = () => {
       tl.to(".hero-content", {
         opacity: 1,
         y: 0,
-        filter: "blur(0px)",
-        duration: 1.2,
+        duration: 0.8,
         ease: "power2.out",
-        delay: 3.5
+        delay: 2
       });
 
-      // Optimized section animations on scroll
+      // Simplified section animations on scroll
       [".about-section", ".skills-section", ".projects-section", ".achievements-section", ".contact-section"].forEach((selector) => {
         ScrollTrigger.create({
           trigger: selector,
           start: "top 85%",
-          end: "bottom 15%",
-          toggleActions: "play none none reverse",
+          toggleActions: "play none none none",
           onEnter: () => {
             gsap.to(selector, {
               opacity: 1,
               y: 0,
-              filter: "blur(0px)",
-              duration: 0.8,
+              duration: 0.5,
               ease: "power2.out"
             });
           }
         });
       });
 
-      // Optimized floating background elements
+      // Simplified floating background elements
       gsap.to(".floating-orb", {
-        y: -15,
-        x: 8,
-        duration: 3,
+        y: -10,
+        x: 5,
+        duration: 4,
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut",
-        stagger: 0.3
+        stagger: 0.5
       });
 
     }, containerRef);
@@ -87,13 +82,11 @@ const Index = () => {
       <div ref={containerRef} className="relative min-h-screen overflow-x-hidden">
         <Navigation />
         
-        {/* Optimized background floating orbs */}
+        {/* Optimized background floating orbs - reduced count */}
         <div className="fixed inset-0 overflow-hidden pointer-events-none">
-          <div className="floating-orb w-20 h-20 md:w-32 md:h-32 top-20 left-4 md:left-10 opacity-20 md:opacity-30"></div>
-          <div className="floating-orb w-16 h-16 md:w-24 md:h-24 top-1/3 right-10 md:right-20 opacity-15 md:opacity-20"></div>
-          <div className="floating-orb w-24 h-24 md:w-40 md:h-40 bottom-40 left-1/4 opacity-20 md:opacity-25"></div>
-          <div className="floating-orb w-18 h-18 md:w-28 md:h-28 top-1/2 right-1/3 opacity-10 md:opacity-15"></div>
-          <div className="floating-orb w-12 h-12 md:w-20 md:h-20 top-3/4 left-1/2 opacity-15 md:opacity-20"></div>
+          <div className="floating-orb w-24 h-24 md:w-32 md:h-32 top-20 left-10 opacity-20"></div>
+          <div className="floating-orb w-20 h-20 md:w-28 md:h-28 top-1/2 right-20 opacity-15"></div>
+          <div className="floating-orb w-28 h-28 md:w-36 md:h-36 bottom-40 left-1/4 opacity-20"></div>
         </div>
 
         <HeroSection />
