@@ -1,14 +1,8 @@
 
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React from 'react';
 import { ArrowSquareOut, GithubLogo } from 'phosphor-react';
 
-gsap.registerPlugin(ScrollTrigger);
-
 const ProjectsSection = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<HTMLDivElement>(null);
 
   const projects = [
     {
@@ -58,77 +52,10 @@ const ProjectsSection = () => {
     }
   ];
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Cards animation
-      ScrollTrigger.create({
-        trigger: cardsRef.current,
-        start: "top 80%",
-        onEnter: () => {
-          gsap.fromTo(".project-card",
-            { 
-              opacity: 0, 
-              y: 100, 
-              scale: 0.8,
-              rotationY: 45,
-              filter: "blur(10px)"
-            },
-            { 
-              opacity: 1, 
-              y: 0, 
-              scale: 1,
-              rotationY: 0,
-              filter: "blur(0px)",
-              duration: 0.8, 
-              stagger: 0.2,
-              ease: "power3.out"
-            }
-          );
-        }
-      });
-
-      // Reduced hover animations
-      document.querySelectorAll('.project-card').forEach(card => {
-        card.addEventListener('mouseenter', () => {
-          gsap.to(card, {
-            y: -8,
-            scale: 1.02,
-            duration: 0.3,
-            ease: "power2.out"
-          });
-          
-          gsap.to(card.querySelector('.card-glow'), {
-            opacity: 0.3,
-            scale: 1.02,
-            duration: 0.3
-          });
-        });
-
-        card.addEventListener('mouseleave', () => {
-          gsap.to(card, {
-            y: 0,
-            scale: 1,
-            duration: 0.3,
-            ease: "power2.out"
-          });
-          
-          gsap.to(card.querySelector('.card-glow'), {
-            opacity: 0,
-            scale: 1,
-            duration: 0.3
-          });
-        });
-      });
-
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
 
   return (
     <section 
       id="projects" 
-      ref={sectionRef} 
       className="dark-section section-padding pt-40"
     >
       <div className="max-w-7xl mx-auto">
@@ -144,19 +71,15 @@ const ProjectsSection = () => {
 
         {/* Projects Grid */}
         <div 
-          ref={cardsRef}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {projects.map((project) => (
             <div 
               key={project.id}
-              className="project-card relative group cursor-pointer"
+              className="relative cursor-pointer"
             >
-              {/* Reduced Glow Effect */}
-              <div className="card-glow absolute inset-0 bg-gradient-to-r from-neon-blue/10 to-neon-purple/10 rounded-2xl blur-lg opacity-0 transition-opacity duration-300"></div>
-              
               {/* Card Content */}
-              <div className="glass-card p-6 h-full relative z-10">
+              <div className="glass-card p-6 h-full">
                 {/* Project Image */}
                 <div className="aspect-video rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-cyber-purple to-cyber-blue">
                   <img 

@@ -1,14 +1,8 @@
 
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React from 'react';
 import { Trophy, Medal, Lightbulb } from 'lucide-react';
 
-gsap.registerPlugin(ScrollTrigger);
-
 const AchievementsSection = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<HTMLDivElement>(null);
 
   const participations = [
     {
@@ -66,71 +60,15 @@ const AchievementsSection = () => {
     }
   ];
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Section title animation
-      ScrollTrigger.create({
-        trigger: sectionRef.current,
-        start: "top 80%",
-        onEnter: () => {
-          gsap.fromTo(".section-title",
-            { opacity: 0, y: 50, filter: "blur(10px)" },
-            { opacity: 1, y: 0, filter: "blur(0px)", duration: 1, ease: "power3.out" }
-          );
-        }
-      });
-
-      // Cards animation
-      ScrollTrigger.create({
-        trigger: cardsRef.current,
-        start: "top 80%",
-        onEnter: () => {
-          gsap.fromTo(".achievement-card",
-            { 
-              opacity: 0, 
-              y: 80, 
-              scale: 0.9,
-              filter: "blur(10px)"
-            },
-            { 
-              opacity: 1, 
-              y: 0, 
-              scale: 1,
-              filter: "blur(0px)",
-              duration: 1, 
-              stagger: 0.3,
-              ease: "power3.out"
-            }
-          );
-        }
-      });
-
-      // Item animations
-      ScrollTrigger.create({
-        trigger: cardsRef.current,
-        start: "top 70%",
-        onEnter: () => {
-          gsap.fromTo(".achievement-item",
-            { opacity: 0, x: -30 },
-            { opacity: 1, x: 0, duration: 0.6, stagger: 0.1, ease: "power2.out", delay: 0.5 }
-          );
-        }
-      });
-
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
 
   return (
     <section 
       id="achievements" 
-      ref={sectionRef} 
       className="dark-section section-padding pt-32"
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16 section-title">
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
             Achievements & Certifications
           </h2>
@@ -141,13 +79,11 @@ const AchievementsSection = () => {
 
         {/* Main Cards Container */}
         <div 
-          ref={cardsRef}
           className="grid lg:grid-cols-2 gap-8"
         >
           {/* Left Card: Participation */}
-          <div className="achievement-card glass-card p-8 border border-neon-blue/30">
-            
-            <div className="relative z-10">
+          <div className="glass-card p-8 border border-neon-blue/30">
+            <div>
               <div className="flex items-center gap-3 mb-8">
                 <div className="p-3 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg">
                   <Trophy size={24} className="text-white" />
@@ -163,7 +99,7 @@ const AchievementsSection = () => {
                   return (
                     <div 
                       key={item.id}
-                      className="achievement-item p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10"
+                      className="p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10"
                     >
                       <div className="flex items-start gap-4">
                         <div className="p-2 bg-gradient-to-r from-neon-blue/20 to-neon-purple/20 rounded-lg">
@@ -192,9 +128,8 @@ const AchievementsSection = () => {
           </div>
 
           {/* Right Card: Certifications */}
-          <div className="achievement-card glass-card p-8 border border-neon-purple/30">
-            
-            <div className="relative z-10">
+          <div className="glass-card p-8 border border-neon-purple/30">
+            <div>
               <div className="flex items-center gap-3 mb-8">
                 <div className="p-3 bg-gradient-to-r from-neon-purple to-neon-pink rounded-lg">
                   <Medal size={24} className="text-white" />
@@ -210,7 +145,7 @@ const AchievementsSection = () => {
                   return (
                     <div 
                       key={cert.id}
-                      className="achievement-item p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10"
+                      className="p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10"
                     >
                       <div className="flex items-start gap-4">
                         <div className="p-3 bg-gradient-to-r from-neon-purple/20 to-neon-pink/20 rounded-lg">

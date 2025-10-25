@@ -1,72 +1,11 @@
 
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+import React from 'react';
 
 const AboutSection = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Content animation
-      ScrollTrigger.create({
-        trigger: contentRef.current,
-        start: "top 80%",
-        onEnter: () => {
-          gsap.fromTo(contentRef.current?.children,
-            { opacity: 0, y: 50, filter: "blur(10px)" },
-            { opacity: 1, y: 0, filter: "blur(0px)", duration: 1, stagger: 0.2, ease: "power3.out" }
-          );
-        }
-      });
-
-      // Image animation
-      ScrollTrigger.create({
-        trigger: imageRef.current,
-        start: "top 80%",
-        onEnter: () => {
-          gsap.fromTo(imageRef.current,
-            { opacity: 0, scale: 0.8, rotation: -10 },
-            { opacity: 1, scale: 1, rotation: 0, duration: 1.2, ease: "power3.out" }
-          );
-        }
-      });
-
-      // Image hover effect
-      const imageElement = imageRef.current;
-      if (imageElement) {
-        imageElement.addEventListener('mouseenter', () => {
-          gsap.to(imageElement, {
-            scale: 1.05,
-            rotation: 2,
-            duration: 0.3,
-            ease: "power2.out"
-          });
-        });
-
-        imageElement.addEventListener('mouseleave', () => {
-          gsap.to(imageElement, {
-            scale: 1,
-            rotation: 0,
-            duration: 0.3,
-            ease: "power2.out"
-          });
-        });
-      }
-
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
 
   return (
     <section 
       id="about" 
-      ref={sectionRef} 
       className="dark-section min-h-screen flex items-center justify-center px-6 md:px-12 lg:px-20 pt-32"
     >
       <div className="max-w-7xl mx-auto w-full">
@@ -80,7 +19,7 @@ const AboutSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* Profile Image - Order 1 on mobile, Order 2 on desktop */}
-          <div ref={imageRef} className="relative order-1 lg:order-2">
+          <div className="relative order-1 lg:order-2">
             <div className="relative mx-auto w-80 h-80 lg:w-96 lg:h-96">
               {/* Enhanced glowing background */}
               <div className="absolute -inset-12 bg-gradient-to-br from-neon-blue/30 via-neon-purple/30 to-neon-pink/30 rounded-full blur-3xl animate-pulse"></div>
@@ -105,7 +44,7 @@ const AboutSection = () => {
           </div>
 
           {/* Content - Order 2 on mobile, Order 1 on desktop */}
-          <div className="space-y-8 order-2 lg:order-1" ref={contentRef}>
+          <div className="space-y-8 order-2 lg:order-1">
             {/* Desktop Title */}
             <div className="hidden lg:block mb-8">
               <h2 className="text-5xl xl:text-6xl font-bold text-gradient mb-4">

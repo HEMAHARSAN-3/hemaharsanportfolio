@@ -1,43 +1,8 @@
 
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React from 'react';
 import { GithubLogo, LinkedinLogo } from 'phosphor-react';
 
-gsap.registerPlugin(ScrollTrigger);
-
 const FooterSection = () => {
-  const footerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Footer animation
-      ScrollTrigger.create({
-        trigger: footerRef.current,
-        start: "top 90%",
-        onEnter: () => {
-          gsap.fromTo(footerRef.current,
-            { opacity: 0, y: 60, filter: "blur(10px)" },
-            { opacity: 1, y: 0, filter: "blur(0px)", duration: 1, ease: "power3.out" }
-          );
-        }
-      });
-
-      // Enhanced floating particles animation
-      gsap.to(".footer-particle", {
-        y: -15,
-        x: 10,
-        duration: 4,
-        repeat: -1,
-        yoyo: true,
-        ease: "power1.inOut",
-        stagger: 0.3
-      });
-
-    }, footerRef);
-
-    return () => ctx.revert();
-  }, []);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -51,24 +16,7 @@ const FooterSection = () => {
   };
 
   return (
-    <footer ref={footerRef} className="relative section-padding dark-section pt-20">
-      {/* Enhanced Background Particles */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="footer-particle absolute rounded-full opacity-20"
-            style={{
-              width: `${Math.random() * 4 + 2}px`,
-              height: `${Math.random() * 4 + 2}px`,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              background: `radial-gradient(circle, rgba(0, 217, 255, ${Math.random() * 0.5 + 0.2}) 0%, transparent 70%)`,
-              animationDelay: `${Math.random() * 4}s`
-            }}
-          />
-        ))}
-      </div>
+    <footer className="relative section-padding dark-section pt-20">
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="grid md:grid-cols-3 gap-12 mb-12">

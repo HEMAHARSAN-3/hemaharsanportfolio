@@ -168,31 +168,6 @@
   .responsive-text-4xl { @apply text-4xl md:text-5xl; }
 }
 
-/* Enhanced smooth animations */
-@keyframes matrix-rain {
-  0% {
-    transform: translateY(-100vh);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(100vh);
-    opacity: 0;
-  }
-}
-
-.matrix-rain {
-  animation: matrix-rain 3s linear infinite;
-}
-
-/* Enhanced floating particles animation */
-
-/* Enhanced ripple effect for social icons */
-.ripple-effect {
-  position: relative;
-}
-
-
-
 /* Hide scrollbar for smooth scroll */
 .hide-scrollbar {
   -ms-overflow-style: none;
@@ -201,20 +176,4 @@
 
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
-}
-
-/* Mobile-first responsive breakpoints */
-@media (max-width: 768px) {
-  .glass-card {
-    backdrop-filter: blur(8px);
-  }
-  
-  .floating-orb {
-    animation-duration: 4s;
-  }
-}
-
-/* Smooth page transitions */
-.page-transition {
-  opacity: 1;
 }

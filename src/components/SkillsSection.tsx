@@ -1,13 +1,7 @@
 
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+import React from 'react';
 
 const SkillsSection = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const skillsRef = useRef<HTMLDivElement>(null);
 
   const skillCategories = [
     {
@@ -55,67 +49,12 @@ const SkillsSection = () => {
     }
   ];
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Skills animation
-      ScrollTrigger.create({
-        trigger: skillsRef.current,
-        start: "top 80%",
-        onEnter: () => {
-          gsap.fromTo(".skill-category",
-            { 
-              opacity: 0, 
-              y: 50, 
-              scale: 0.9
-            },
-            { 
-              opacity: 1, 
-              y: 0, 
-              scale: 1,
-              duration: 0.8, 
-              stagger: 0.2,
-              ease: "power2.out"
-            }
-          );
-        }
-      });
-
-      // Floating particles animation
-      gsap.to(".skill-particle", {
-        y: -15,
-        x: 10,
-        duration: 3,
-        repeat: -1,
-        yoyo: true,
-        ease: "power1.inOut",
-        stagger: 0.2
-      });
-
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
 
   return (
     <section 
       id="skills" 
-      ref={sectionRef} 
       className="dark-section section-padding pt-32"
     >
-      {/* Background Particles */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(15)].map((_, i) => (
-          <div
-            key={i}
-            className="skill-particle absolute w-1 h-1 bg-neon-blue rounded-full opacity-30"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`
-            }}
-          />
-        ))}
-      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Header */}
@@ -130,7 +69,6 @@ const SkillsSection = () => {
 
         {/* Skills Categories */}
         <div 
-          ref={skillsRef}
           className="grid lg:grid-cols-2 xl:grid-cols-4 gap-8"
         >
           {skillCategories.map((category, categoryIndex) => (

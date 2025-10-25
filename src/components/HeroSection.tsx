@@ -1,29 +1,12 @@
 
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
+import React from 'react';
 
 const HeroSection = () => {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const splineRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Optimized Spline fade in from top
-      gsap.fromTo(splineRef.current,
-        { opacity: 0, y: -50 },
-        { opacity: 1, y: 0, duration: 1.5, delay: 4, ease: "power2.out" }
-      );
-
-
-    }, heroRef);
-
-    return () => ctx.revert();
-  }, []);
 
   return (
-    <section id="home" ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Spline 3D Background */}
-      <div ref={splineRef} className="absolute inset-0 w-full h-full">
+      <div className="absolute inset-0 w-full h-full">
         <iframe 
           src='https://my.spline.design/orb-LLD7JkmD59ZtvGdh2EIUdGst/' 
           frameBorder='0' 
