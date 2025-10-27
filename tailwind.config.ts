@@ -23,22 +23,22 @@ export default {
 				inter: ['Inter', 'sans-serif'],
 			},
 			colors: {
-				// Futuristic color palette
+				// Green accent color palette
 				neon: {
-					blue: '#00D9FF',
-					purple: '#8B5CF6',
-					pink: '#FF00FF',
-					green: '#00FF88',
+					blue: '#98FF98',
+					purple: '#98FF98',
+					pink: '#98FF98',
+					green: '#98FF98',
 				},
 				cyber: {
-					dark: '#0A0A0F',
-					darker: '#050508',
-					purple: '#1E1B4B',
-					blue: '#1E3A8A',
+					dark: 'hsl(0 0% 7%)',
+					darker: 'hsl(0 0% 5%)',
+					purple: 'hsl(0 0% 10%)',
+					blue: 'hsl(0 0% 12%)',
 				},
 				glass: {
-					light: 'rgba(255, 255, 255, 0.1)',
-					dark: 'rgba(0, 0, 0, 0.2)',
+					light: 'rgba(255, 255, 255, 0.03)',
+					dark: 'rgba(0, 0, 0, 0.3)',
 				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
