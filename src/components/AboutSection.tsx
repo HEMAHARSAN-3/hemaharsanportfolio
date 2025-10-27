@@ -13,7 +13,7 @@ const AboutSection = () => {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient mb-4">
             About Me
           </h2>
-          <div className="w-24 h-1 mx-auto rounded-full" style={{ background: 'hsl(120 88% 79%)' }}></div>
+          <div className="w-24 h-1 mx-auto rounded-full" style={{ background: 'hsl(190 95% 65%)' }}></div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -23,13 +23,13 @@ const AboutSection = () => {
               {/* Glowing background effect */}
               <div 
                 className="absolute -inset-8 rounded-full blur-3xl opacity-30"
-                style={{ background: 'hsl(120 88% 79%)' }}
+                style={{ background: 'hsl(190 95% 65%)' }}
               ></div>
               
               {/* Image container with border */}
               <div 
                 className="relative w-full h-full rounded-2xl p-1"
-                style={{ background: `linear-gradient(135deg, hsl(120 88% 79%), hsl(120 70% 60%))` }}
+                style={{ background: `linear-gradient(135deg, hsl(190 95% 65%), hsl(190 85% 55%))` }}
               >
                 <div className="w-full h-full rounded-2xl overflow-hidden" style={{ background: 'hsl(0 0% 10%)' }}>
                   <img 
@@ -43,11 +43,11 @@ const AboutSection = () => {
               {/* Decorative elements */}
               <div 
                 className="absolute -top-6 -right-6 w-12 h-12 rounded-full blur-md opacity-60"
-                style={{ background: 'hsl(120 88% 79%)' }}
+                style={{ background: 'hsl(190 95% 65%)' }}
               ></div>
               <div 
                 className="absolute -bottom-8 -left-8 w-16 h-16 rounded-full blur-lg opacity-40"
-                style={{ background: 'hsl(120 70% 60%)' }}
+                style={{ background: 'hsl(190 85% 55%)' }}
               ></div>
             </div>
           </div>
@@ -58,15 +58,15 @@ const AboutSection = () => {
             <div className="glass-card p-6 lg:p-8">
               <p className="text-lg md:text-xl text-white/90 leading-relaxed">
                 Hi, I'm <span className="text-gradient font-semibold">Hema Harsan R</span> — a passionate B.Tech student specializing in 
-                <span className="font-medium" style={{ color: 'hsl(120 88% 79%)' }}> Artificial Intelligence & Data Science</span>, with a deep love for 
-                <span className="font-medium" style={{ color: 'hsl(120 70% 60%)' }}> Full Stack Development</span>.
+                <span className="font-medium" style={{ color: 'hsl(190 95% 65%)' }}> Artificial Intelligence & Data Science</span>, with a deep love for 
+                <span className="font-medium" style={{ color: 'hsl(190 85% 55%)' }}> Full Stack Development</span>.
               </p>
             </div>
 
             {/* Details */}
             <div className="glass-card p-6 lg:p-8">
               <p className="text-lg md:text-xl text-white/80 leading-relaxed">
-                Currently in my <span className="font-medium" style={{ color: 'hsl(120 88% 79%)' }}>4th year at Dr. N.G.P. Institute of Technology</span>, 
+                Currently in my <span className="font-medium" style={{ color: 'hsl(190 95% 65%)' }}>4th year at Dr. N.G.P. Institute of Technology</span>, 
                 I love building smart, meaningful solutions that blend cutting-edge technology with creative innovation. 
                 Whether it's developing dynamic web applications or exploring the latest AI trends, I'm always curious, 
                 always learning, and always pushing to turn ideas into impactful digital experiences.
@@ -82,8 +82,8 @@ const AboutSection = () => {
                     key={skill}
                     className="px-4 py-2 backdrop-blur-sm rounded-full text-sm text-white border"
                     style={{ 
-                      background: 'hsla(120, 88%, 79%, 0.1)',
-                      borderColor: 'hsl(120 88% 79% / 0.3)'
+                      background: 'hsla(190, 95%, 65%, 0.1)',
+                      borderColor: 'hsl(190 95% 65% / 0.3)'
                     }}
                   >
                     {skill}
@@ -98,7 +98,7 @@ const AboutSection = () => {
                 href="#projects" 
                 className="flex items-center justify-center gap-3 px-6 py-3 font-semibold rounded-xl"
                 style={{ 
-                  background: 'hsl(120 88% 79%)',
+                  background: 'hsl(190 95% 65%)',
                   color: 'hsl(0 0% 10%)'
                 }}
               >
@@ -108,7 +108,7 @@ const AboutSection = () => {
               <a 
                 href="#contact" 
                 className="flex items-center justify-center gap-3 px-6 py-3 glass-card font-semibold rounded-xl text-white border"
-                style={{ borderColor: 'hsl(120 88% 79% / 0.5)' }}
+                style={{ borderColor: 'hsl(190 95% 65% / 0.5)' }}
               >
                 Let's Connect 
                 <span>→</span>

@@ -23,12 +23,12 @@ export default {
 				inter: ['Inter', 'sans-serif'],
 			},
 			colors: {
-				// Green accent color palette
+				// Cyan accent color palette
 				neon: {
-					blue: '#98FF98',
-					purple: '#98FF98',
-					pink: '#98FF98',
-					green: '#98FF98',
+					blue: '#1DE9F9',
+					purple: '#1DE9F9',
+					pink: '#1DE9F9',
+					green: '#1DE9F9',
 				},
 				cyber: {
 					dark: 'hsl(0 0% 7%)',

@@ -16,16 +16,16 @@
     --popover: 0 0% 10%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 120 88% 79%;
+    --primary: 190 95% 65%;
     --primary-foreground: 0 0% 10%;
 
-    --secondary: 120 70% 60%;
+    --secondary: 190 85% 55%;
     --secondary-foreground: 0 0% 10%;
 
     --muted: 0 0% 20%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 120 88% 79%;
+    --accent: 190 95% 65%;
     --accent-foreground: 0 0% 10%;
 
     --destructive: 0 62.8% 30.6%;
@@ -33,7 +33,7 @@
 
     --border: 0 0% 20%;
     --input: 0 0% 15%;
-    --ring: 120 88% 79%;
+    --ring: 190 95% 65%;
 
     --radius: 0.75rem;
   }
@@ -70,7 +70,7 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: hsl(120 88% 79%);
+    background: hsl(190 95% 65%);
     border-radius: 3px;
   }
 }
@@ -86,30 +86,30 @@
   /* Optimized glow effect */
   .neon-glow {
     box-shadow: 
-      0 0 15px hsla(120, 88%, 79%, 0.3),
-      0 0 30px hsla(120, 88%, 79%, 0.2),
+      0 0 15px hsla(190, 95%, 65%, 0.3),
+      0 0 30px hsla(190, 95%, 65%, 0.2),
       inset 0 0 15px rgba(255, 255, 255, 0.05);
   }
 
   /* Responsive button */
   .cyber-btn {
     @apply relative px-6 py-3 md:px-8 md:py-4 text-base md:text-lg font-semibold rounded-lg md:rounded-xl;
-    background: hsl(120 88% 79%);
+    background: hsl(190 95% 65%);
     color: hsl(0 0% 10%);
-    box-shadow: 0 0 20px hsla(120, 88%, 79%, 0.3);
+    box-shadow: 0 0 20px hsla(190, 95%, 65%, 0.3);
   }
 
   /* Optimized floating orb */
   .floating-orb {
     @apply absolute rounded-full blur-lg md:blur-xl;
-    background: radial-gradient(circle, hsla(120, 88%, 79%, 0.4) 0%, transparent 70%);
+    background: radial-gradient(circle, hsla(190, 95%, 65%, 0.4) 0%, transparent 70%);
   }
 
   /* Responsive progress bar */
   .progress-bar {
     @apply h-1 rounded-full;
-    background: hsl(120 88% 79%);
-    box-shadow: 0 0 15px hsla(120, 88%, 79%, 0.6);
+    background: hsl(190 95% 65%);
+    box-shadow: 0 0 15px hsla(190, 95%, 65%, 0.6);
   }
 
   /* Preloader styles */
@@ -127,8 +127,8 @@
   }
 
   .cyber-input:focus {
-    border-color: hsl(120 88% 79%);
-    box-shadow: 0 0 15px hsla(120, 88%, 79%, 0.3);
+    border-color: hsl(190 95% 65%);
+    box-shadow: 0 0 15px hsla(190, 95%, 65%, 0.3);
   }
 
   /* Responsive section spacing */
@@ -145,7 +145,7 @@
 
   /* Text gradient */
   .text-gradient {
-    background: linear-gradient(90deg, hsl(120 88% 79%), hsl(120 70% 60%));
+    background: linear-gradient(90deg, hsl(190 95% 65%), hsl(190 85% 55%));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
