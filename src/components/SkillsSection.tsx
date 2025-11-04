@@ -88,7 +88,10 @@ const SkillsSection = () => {
                   return (
                     <div 
                       key={skill.name}
-                      className="flex flex-col items-center p-4 glass-card rounded-xl cursor-pointer"
+                      className="flex flex-col items-center p-4 glass-card rounded-xl cursor-pointer transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                      style={{ 
+                        boxShadow: 'hover:0 0 20px hsla(190, 95%, 65%, 0.3)'
+                      }}
                     >
                       <div className="text-center">
                         {/* Icon */}

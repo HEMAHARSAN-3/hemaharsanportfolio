@@ -17,10 +17,10 @@ const HeroSection = () => {
         />
       </div>
       
-      {/* Content Overlay - Positioned to the left */}
+      {/* Content Overlay - Centered */}
       <div className="hero-content relative z-10 section-padding w-full">
-        <div className="max-w-6xl mx-auto flex items-center min-h-screen">
-          <div className="text-left max-w-3xl">
+        <div className="max-w-6xl mx-auto flex items-center justify-center min-h-screen">
+          <div className="text-center max-w-3xl mx-auto">
             {/* Main Headline */}
             <h1 className="mb-4 md:mb-6 leading-tight">
               <span className="text-white text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold block mb-2">
