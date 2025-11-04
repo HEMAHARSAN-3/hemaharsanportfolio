@@ -27,38 +27,99 @@ const AboutSection = () => {
     <section 
       ref={sectionRef}
       id="about" 
-      className="dark-section min-h-screen flex items-center justify-center px-6 md:px-12 lg:px-20 pt-32 opacity-0 translate-y-10 transition-all duration-1000 [&.animate-in]:opacity-100 [&.animate-in]:translate-y-0"
+      className="dark-section min-h-screen flex items-center justify-center px-6 md:px-12 lg:px-20 pt-32"
     >
       <div className="max-w-7xl mx-auto w-full">
-        {/* Title */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient mb-4">
-            About Me
-          </h2>
-          <div className="w-24 h-1 mx-auto rounded-full" style={{ background: 'hsl(190 95% 65%)' }}></div>
-        </div>
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* Text Content - Left Column */}
+          <div className="opacity-0 -translate-x-16 transition-all duration-1000 delay-100 [.animate-in_&]:opacity-100 [.animate-in_&]:translate-x-0">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient mb-8">
+              About Me
+            </h2>
+            
+            <div className="space-y-6 text-white/90">
+              <p className="text-lg md:text-xl leading-relaxed">
+                Hi, I'm <span className="text-gradient font-semibold">Hema Harsan R</span> — a passionate B.Tech student specializing in 
+                <span className="font-medium" style={{ color: 'hsl(190 95% 65%)' }}> Artificial Intelligence & Data Science</span>, with a deep love for 
+                <span className="font-medium" style={{ color: 'hsl(190 85% 55%)' }}> Full Stack Development</span>.
+              </p>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Profile Image - Left Side */}
-          <div className="relative flex justify-center lg:justify-start">
-            <div className="relative w-80 h-80 lg:w-[400px] lg:h-[400px]">
+              <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+                Currently in my <span className="font-medium" style={{ color: 'hsl(190 95% 65%)' }}>4th year at Dr. N.G.P. Institute of Technology</span>, 
+                I love building smart, meaningful solutions that blend cutting-edge technology with creative innovation. 
+                Whether it's developing dynamic web applications or exploring the latest AI trends, I'm always curious, 
+                always learning, and always pushing to turn ideas into impactful digital experiences.
+              </p>
+
+              <div className="pt-4">
+                <h3 className="text-xl font-semibold text-gradient mb-4">What I Do</h3>
+                <div className="flex flex-wrap gap-3">
+                  {['AI/ML Development', 'Full Stack Web Apps', 'Data Science', 'UI/UX Design'].map((skill) => (
+                    <span 
+                      key={skill}
+                      className="px-4 py-2 backdrop-blur-sm rounded-full text-sm text-white border"
+                      style={{ 
+                        background: 'hsla(190, 95%, 65%, 0.1)',
+                        borderColor: 'hsl(190 95% 65% / 0.3)'
+                      }}
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 pt-6">
+                <a 
+                  href="#projects" 
+                  className="flex items-center justify-center gap-3 px-6 py-3 font-semibold rounded-xl transition-all duration-300 hover:scale-105"
+                  style={{ 
+                    background: 'hsl(190 95% 65%)',
+                    color: 'hsl(0 0% 7%)'
+                  }}
+                >
+                  View My Work 
+                  <span>→</span>
+                </a>
+                <a 
+                  href="#contact" 
+                  className="flex items-center justify-center gap-3 px-6 py-3 glass-card font-semibold rounded-xl text-white border transition-all duration-300 hover:scale-105"
+                  style={{ borderColor: 'hsl(190 95% 65% / 0.5)' }}
+                >
+                  Let's Connect 
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Professional Photo - Right Column */}
+          <div className="relative flex justify-center lg:justify-end">
+            <div className="relative w-80 h-80 lg:w-[450px] lg:h-[550px]">
               {/* Glowing background effect */}
               <div 
-                className="absolute -inset-8 rounded-full blur-3xl opacity-30"
+                className="absolute -inset-8 rounded-2xl blur-3xl opacity-30"
                 style={{ background: 'hsl(190 95% 65%)' }}
               ></div>
               
               {/* Image container with border */}
               <div 
-                className="relative w-full h-full rounded-2xl p-1"
+                className="relative w-full h-full rounded-2xl p-1 overflow-hidden"
                 style={{ background: `linear-gradient(135deg, hsl(190 95% 65%), hsl(190 85% 55%))` }}
               >
-                <div className="w-full h-full rounded-2xl overflow-hidden" style={{ background: 'hsl(0 0% 10%)' }}>
+                <div className="relative w-full h-full rounded-2xl overflow-hidden" style={{ background: 'hsl(0 0% 7%)' }}>
                   <img 
                     src="/lovable-uploads/c828580d-3958-4a05-b94c-6c010bed823b.png" 
                     alt="Hema Harsan R - AI & Full Stack Developer"
                     className="w-full h-full object-cover"
                   />
+                  
+                  {/* Animated reveal mask */}
+                  <div 
+                    className="absolute inset-0 translate-x-0 transition-transform duration-1000 delay-300 [.animate-in_&]:translate-x-full"
+                    style={{ background: 'hsl(190 95% 65%)' }}
+                  ></div>
                 </div>
               </div>
               
@@ -71,70 +132,6 @@ const AboutSection = () => {
                 className="absolute -bottom-8 -left-8 w-16 h-16 rounded-full blur-lg opacity-40"
                 style={{ background: 'hsl(190 85% 55%)' }}
               ></div>
-            </div>
-          </div>
-
-          {/* Content - Right Side */}
-          <div className="space-y-6">
-            {/* Introduction */}
-            <div className="glass-card p-6 lg:p-8">
-              <p className="text-lg md:text-xl text-white/90 leading-relaxed">
-                Hi, I'm <span className="text-gradient font-semibold">Hema Harsan R</span> — a passionate B.Tech student specializing in 
-                <span className="font-medium" style={{ color: 'hsl(190 95% 65%)' }}> Artificial Intelligence & Data Science</span>, with a deep love for 
-                <span className="font-medium" style={{ color: 'hsl(190 85% 55%)' }}> Full Stack Development</span>.
-              </p>
-            </div>
-
-            {/* Details */}
-            <div className="glass-card p-6 lg:p-8">
-              <p className="text-lg md:text-xl text-white/80 leading-relaxed">
-                Currently in my <span className="font-medium" style={{ color: 'hsl(190 95% 65%)' }}>4th year at Dr. N.G.P. Institute of Technology</span>, 
-                I love building smart, meaningful solutions that blend cutting-edge technology with creative innovation. 
-                Whether it's developing dynamic web applications or exploring the latest AI trends, I'm always curious, 
-                always learning, and always pushing to turn ideas into impactful digital experiences.
-              </p>
-            </div>
-
-            {/* Skills */}
-            <div className="glass-card p-6 lg:p-8">
-              <h3 className="text-xl font-semibold text-gradient mb-4">What I Do</h3>
-              <div className="flex flex-wrap gap-3">
-                {['AI/ML Development', 'Full Stack Web Apps', 'Data Science', 'UI/UX Design'].map((skill) => (
-                  <span 
-                    key={skill}
-                    className="px-4 py-2 backdrop-blur-sm rounded-full text-sm text-white border"
-                    style={{ 
-                      background: 'hsla(190, 95%, 65%, 0.1)',
-                      borderColor: 'hsl(190 95% 65% / 0.3)'
-                    }}
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <a 
-                href="#projects" 
-                className="flex items-center justify-center gap-3 px-6 py-3 font-semibold rounded-xl"
-                style={{ 
-                  background: 'hsl(190 95% 65%)',
-                  color: 'hsl(0 0% 10%)'
-                }}
-              >
-                View My Work 
-                <span>→</span>
-              </a>
-              <a 
-                href="#contact" 
-                className="flex items-center justify-center gap-3 px-6 py-3 glass-card font-semibold rounded-xl text-white border"
-                style={{ borderColor: 'hsl(190 95% 65% / 0.5)' }}
-              >
-                Let's Connect 
-                <span>→</span>
-              </a>
             </div>
           </div>
         </div>
