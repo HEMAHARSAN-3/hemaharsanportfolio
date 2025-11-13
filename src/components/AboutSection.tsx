@@ -31,8 +31,49 @@ const AboutSection = () => {
     >
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Text Content - Left Column */}
-          <div className="opacity-0 -translate-x-16 transition-all duration-1000 delay-100 [.animate-in_&]:opacity-100 [.animate-in_&]:translate-x-0">
+          {/* Professional Photo - Left Column */}
+          <div className="relative flex justify-center lg:justify-start order-2 lg:order-1">
+            <div className="relative w-80 h-80 lg:w-[450px] lg:h-[550px]">
+              {/* Glowing background effect */}
+              <div 
+                className="absolute -inset-8 rounded-2xl blur-3xl opacity-30"
+                style={{ background: 'hsl(190 95% 65%)' }}
+              ></div>
+              
+              {/* Image container with border */}
+              <div 
+                className="relative w-full h-full rounded-2xl p-1 overflow-hidden"
+                style={{ background: `linear-gradient(135deg, hsl(190 95% 65%), hsl(190 85% 55%))` }}
+              >
+                <div className="relative w-full h-full rounded-2xl overflow-hidden" style={{ background: 'hsl(0 0% 7%)' }}>
+                  <img 
+                    src="/lovable-uploads/c828580d-3958-4a05-b94c-6c010bed823b.png" 
+                    alt="Hema Harsan R - AI & Full Stack Developer"
+                    className="w-full h-full object-cover"
+                  />
+                  
+                  {/* Animated reveal mask */}
+                  <div 
+                    className="absolute inset-0 translate-x-0 transition-transform duration-1000 delay-300 [.animate-in_&]:translate-x-full"
+                    style={{ background: 'hsl(190 95% 65%)' }}
+                  ></div>
+                </div>
+              </div>
+              
+              {/* Decorative elements */}
+              <div 
+                className="absolute -top-6 -right-6 w-12 h-12 rounded-full blur-md opacity-60"
+                style={{ background: 'hsl(190 95% 65%)' }}
+              ></div>
+              <div 
+                className="absolute -bottom-8 -left-8 w-16 h-16 rounded-full blur-lg opacity-40"
+                style={{ background: 'hsl(190 85% 55%)' }}
+              ></div>
+            </div>
+          </div>
+
+          {/* Text Content - Right Column */}
+          <div className="opacity-0 translate-x-16 transition-all duration-1000 delay-100 [.animate-in_&]:opacity-100 [.animate-in_&]:translate-x-0 order-1 lg:order-2">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient mb-8">
               About Me
             </h2>
@@ -73,47 +114,6 @@ const AboutSection = () => {
                   <span>→</span>
                 </a>
               </div>
-            </div>
-          </div>
-
-          {/* Professional Photo - Right Column */}
-          <div className="relative flex justify-center lg:justify-end">
-            <div className="relative w-80 h-80 lg:w-[450px] lg:h-[550px]">
-              {/* Glowing background effect */}
-              <div 
-                className="absolute -inset-8 rounded-2xl blur-3xl opacity-30"
-                style={{ background: 'hsl(190 95% 65%)' }}
-              ></div>
-              
-              {/* Image container with border */}
-              <div 
-                className="relative w-full h-full rounded-2xl p-1 overflow-hidden"
-                style={{ background: `linear-gradient(135deg, hsl(190 95% 65%), hsl(190 85% 55%))` }}
-              >
-                <div className="relative w-full h-full rounded-2xl overflow-hidden" style={{ background: 'hsl(0 0% 7%)' }}>
-                  <img 
-                    src="/lovable-uploads/c828580d-3958-4a05-b94c-6c010bed823b.png" 
-                    alt="Hema Harsan R - AI & Full Stack Developer"
-                    className="w-full h-full object-cover"
-                  />
-                  
-                  {/* Animated reveal mask */}
-                  <div 
-                    className="absolute inset-0 translate-x-0 transition-transform duration-1000 delay-300 [.animate-in_&]:translate-x-full"
-                    style={{ background: 'hsl(190 95% 65%)' }}
-                  ></div>
-                </div>
-              </div>
-              
-              {/* Decorative elements */}
-              <div 
-                className="absolute -top-6 -right-6 w-12 h-12 rounded-full blur-md opacity-60"
-                style={{ background: 'hsl(190 95% 65%)' }}
-              ></div>
-              <div 
-                className="absolute -bottom-8 -left-8 w-16 h-16 rounded-full blur-lg opacity-40"
-                style={{ background: 'hsl(190 85% 55%)' }}
-              ></div>
             </div>
           </div>
         </div>

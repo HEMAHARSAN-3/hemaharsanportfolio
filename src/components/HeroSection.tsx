@@ -40,13 +40,23 @@ const HeroSection = () => {
               and futuristic design principles.
             </p>
             
-            {/* CTA Button */}
-            <button 
-              className="cta-button cyber-btn responsive-text-lg"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Hire Me
-            </button>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button 
+                className="cta-button cyber-btn responsive-text-lg"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Hire Me
+              </button>
+              <a 
+                href="/Hema_Harsan_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-button cyber-btn responsive-text-lg"
+              >
+                Resume
+              </a>
+            </div>
           </div>
         </div>
       </div>
