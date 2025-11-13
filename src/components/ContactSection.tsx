@@ -95,7 +95,7 @@ const ContactSection = () => {
             
             <button
               type="submit"
-              className="submit-btn w-full cyber-btn flex items-center justify-center gap-3"
+              className="submit-btn w-full glass-card px-6 py-3 md:px-8 md:py-4 text-base md:text-lg font-semibold rounded-lg md:rounded-xl text-white flex items-center justify-center gap-3"
             >
               <Send size={20} />
               Send Message

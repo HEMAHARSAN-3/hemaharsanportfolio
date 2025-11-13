@@ -81,7 +81,7 @@ const FooterSection = () => {
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-center items-center gap-4">
           <button
             onClick={scrollToTop}
-            className="px-4 py-2 glass-card text-sm text-white/80"
+            className="px-6 py-3 glass-card text-base font-semibold rounded-lg text-white"
           >
             Back to Top ↑
           </button>

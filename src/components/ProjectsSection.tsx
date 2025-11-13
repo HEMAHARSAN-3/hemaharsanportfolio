@@ -7,6 +7,15 @@ const ProjectsSection = () => {
   const projects = [
     {
       id: 1,
+      title: "CodeCraft",
+      description: "A learning platform to master programming languages with interactive tutorials and hands-on challenges",
+      tech: ["React", "TypeScript", "CSS"],
+      image: "/lovable-uploads/codecraft-project.png",
+      githubLink: "https://github.com/HEMAHARSAN-3/Learning--Platform",
+      liveDemo: "https://codecraftplatform.netlify.app/"
+    },
+    {
+      id: 2,
       title: "Katomaran Todo",
       description: "A modern todo application with clean interface and efficient task management",
       tech: ["React", "JavaScript", "CSS", "HTML"],
@@ -15,7 +24,7 @@ const ProjectsSection = () => {
       liveDemo: null
     },
     {
-      id: 2,
+      id: 3,
       title: "Italian Recipes Website",
       description: "A beautiful recipe website showcasing authentic Italian cuisine and cooking traditions",
       tech: ["HTML", "CSS", "JavaScript", "Responsive Design"],
@@ -24,7 +33,7 @@ const ProjectsSection = () => {
       liveDemo: "https://hemaharsan2005.neocities.org/Italian%20Recipes/italian_home"
     },
     {
-      id: 3,
+      id: 4,
       title: "Pneumonia Prediction System",
       description: "AI-powered medical diagnosis system using Random Forest algorithm for pneumonia detection",
       tech: ["Python", "Machine Learning", "Random Forest", "Data Science"],
@@ -33,7 +42,7 @@ const ProjectsSection = () => {
       liveDemo: null
     },
     {
-      id: 4,
+      id: 5,
       title: "My Resume",
       description: "Interactive resume website with clean design and professional presentation",
       tech: ["HTML", "CSS", "JavaScript", "Responsive Design"],
@@ -42,7 +51,7 @@ const ProjectsSection = () => {
       liveDemo: "https://my-resume-website-using-html-css.netlify.app/"
     },
     {
-      id: 5,
+      id: 6,
       title: "My-Portfolio",
       description: "A personal portfolio website built to highlight professional skills, projects, and achievements.",
       tech: ["HTML", "CSS", "JavaScript"],
@@ -79,7 +88,7 @@ const ProjectsSection = () => {
               className="relative cursor-pointer"
             >
               {/* Card Content */}
-              <div className="glass-card p-6 h-full">
+              <div className="glass-card p-6 h-full flex flex-col">
                 {/* Project Image */}
                 <div className="aspect-video rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-cyber-purple to-cyber-blue">
                   <img 
@@ -90,7 +99,7 @@ const ProjectsSection = () => {
                 </div>
                 
                 {/* Project Info */}
-                <div className="space-y-4">
+                <div className="space-y-4 flex-1 flex flex-col">
                   <h3 className="text-xl font-bold text-white">
                     {project.title}
                   </h3>
@@ -111,14 +120,14 @@ const ProjectsSection = () => {
                     ))}
                   </div>
                   
-                  {/* Action Buttons */}
-                  <div className="flex gap-3 pt-4">
+                  {/* Action Buttons - Positioned at bottom */}
+                  <div className="flex gap-3 mt-auto pt-4">
                     {project.liveDemo && project.liveDemo !== "#" && (
                       <a 
                         href={project.liveDemo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-neon-blue to-neon-purple text-white text-sm rounded-lg"
+                        className="flex items-center gap-2 px-4 py-2 glass-card text-black text-sm rounded-lg font-semibold"
                       >
                         <ArrowSquareOut size={16} weight="light" />
                         Live Demo
@@ -128,7 +137,7 @@ const ProjectsSection = () => {
                       href={project.githubLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm text-white text-sm rounded-lg border border-white/20"
+                      className="flex items-center gap-2 px-4 py-2 glass-card text-white text-sm rounded-lg"
                     >
                       <GithubLogo size={16} weight="light" />
                       GitHub
