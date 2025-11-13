@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { GithubLogo, LinkedinLogo } from 'phosphor-react';
+import { Github, Linkedin } from 'lucide-react';
 
 const FooterSection = () => {
 
@@ -33,7 +33,7 @@ const FooterSection = () => {
                 rel="noopener noreferrer"
                 className="relative p-2 glass-card ripple-effect"
               >
-                <GithubLogo size={20} weight="light" className="text-white" />
+                <Github size={20} className="text-white" />
               </a>
               <a 
                 href="https://www.linkedin.com/in/hema-harsan-r" 
@@ -41,7 +41,7 @@ const FooterSection = () => {
                 rel="noopener noreferrer"
                 className="relative p-2 glass-card ripple-effect"
               >
-                <LinkedinLogo size={20} weight="light" className="text-neon-blue" />
+                <Linkedin size={20} className="text-neon-blue" />
               </a>
             </div>
           </div>

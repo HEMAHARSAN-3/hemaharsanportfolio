@@ -23,10 +23,10 @@ const HeroSection = () => {
           <div className="text-center max-w-3xl mx-auto">
             {/* Main Headline */}
             <h1 className="mb-4 md:mb-6 leading-tight">
-              <span className="text-white text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold block mb-2">
+              <span className="text-white text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold block mb-2">
                 Hi, I'm
               </span>
-              <span className="text-gradient text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold block mb-2">
+              <span className="text-gradient text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold block mb-2">
                 Hema Harsan
               </span>
               <span className="text-white/80 text-xl md:text-3xl lg:text-4xl xl:text-5xl font-light block">

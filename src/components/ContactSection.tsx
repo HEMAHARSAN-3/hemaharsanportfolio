@@ -1,6 +1,6 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { GithubLogo, LinkedinLogo, PaperPlaneTilt, Envelope, MapPin } from 'phosphor-react';
+import { Github, Linkedin, Send, Mail, MapPin } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
 const ContactSection = () => {
@@ -97,7 +97,7 @@ const ContactSection = () => {
               type="submit"
               className="submit-btn w-full cyber-btn flex items-center justify-center gap-3"
             >
-              <PaperPlaneTilt size={20} weight="light" />
+              <Send size={20} />
               Send Message
             </button>
           </form>
@@ -118,13 +118,13 @@ const ContactSection = () => {
               {/* Contact Details */}
               <div className="mt-6 space-y-3">
                 <div className="flex items-center gap-3 text-white/70">
-                  <Envelope size={20} weight="light" className="text-neon-blue" />
+                  <Mail size={20} className="text-neon-blue" />
                   <a href="mailto:hemaharsan3@gmail.com">
                     hemaharsan3@gmail.com
                   </a>
                 </div>
                 <div className="flex items-center gap-3 text-white/70">
-                  <MapPin size={20} weight="light" className="text-neon-purple" />
+                  <MapPin size={20} className="text-neon-purple" />
                   <span>Coimbatore, Tamil Nadu, India</span>
                 </div>
               </div>
@@ -137,7 +137,7 @@ const ContactSection = () => {
                   rel="noopener noreferrer"
                   className="social-icon relative p-3 glass-card ripple-effect"
                 >
-                  <GithubLogo size={24} weight="light" className="text-white" />
+                  <Github size={24} className="text-white" />
                 </a>
                 <a 
                   href="https://www.linkedin.com/in/hema-harsan-r" 
@@ -145,7 +145,7 @@ const ContactSection = () => {
                   rel="noopener noreferrer"
                   className="social-icon relative p-3 glass-card ripple-effect"
                 >
-                  <LinkedinLogo size={24} weight="light" className="text-neon-blue" />
+                  <Linkedin size={24} className="text-neon-blue" />
                 </a>
               </div>
             </div>

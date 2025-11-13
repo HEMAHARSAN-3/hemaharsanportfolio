@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-import { List, X } from 'phosphor-react';
+import { Menu, X } from 'lucide-react';
 
 const Navigation = () => {
   const navRef = useRef<HTMLElement>(null);
@@ -74,7 +74,7 @@ const Navigation = () => {
             onClick={toggleMenu}
             className="md:hidden text-white p-2 z-50 relative"
           >
-            {isMenuOpen ? <X size={20} weight="light" /> : <List size={20} weight="light" />}
+            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </nav>

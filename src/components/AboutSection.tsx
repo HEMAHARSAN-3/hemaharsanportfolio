@@ -51,26 +51,8 @@ const AboutSection = () => {
                 always learning, and always pushing to turn ideas into impactful digital experiences.
               </p>
 
-              <div className="pt-4">
-                <h3 className="text-xl font-semibold text-gradient mb-4">What I Do</h3>
-                <div className="flex flex-wrap gap-3">
-                  {['AI/ML Development', 'Full Stack Web Apps', 'Data Science', 'UI/UX Design'].map((skill) => (
-                    <span 
-                      key={skill}
-                      className="px-4 py-2 backdrop-blur-sm rounded-full text-sm text-white border"
-                      style={{ 
-                        background: 'hsla(190, 95%, 65%, 0.1)',
-                        borderColor: 'hsl(190 95% 65% / 0.3)'
-                      }}
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-6">
+              <div className="flex flex-col sm:flex-row gap-4 pt-8">
                 <a 
                   href="#projects" 
                   className="flex items-center justify-center gap-3 px-6 py-3 font-semibold rounded-xl transition-all duration-300 hover:scale-105"
