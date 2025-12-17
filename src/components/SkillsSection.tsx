@@ -82,7 +82,7 @@ const SkillsSection = () => {
   return (
     <section 
       id="skills" 
-      className="dark-section section-padding pt-32"
+      className="skills-section dark-section section-padding pt-32"
       ref={sectionRef}
     >
       <div className="relative z-10 max-w-7xl mx-auto">
