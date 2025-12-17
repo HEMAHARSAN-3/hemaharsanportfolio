@@ -31,7 +31,7 @@ const FooterSection = () => {
                 href="https://github.com/HEMAHARSAN-3" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="relative p-2 glass-card ripple-effect"
+                className="relative p-2 glass-card ripple-effect transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-neon-blue/30"
               >
                 <Github size={20} className="text-white" />
               </a>
@@ -39,7 +39,7 @@ const FooterSection = () => {
                 href="https://www.linkedin.com/in/hema-harsan-r" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="relative p-2 glass-card ripple-effect"
+                className="relative p-2 glass-card ripple-effect transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-neon-blue/30"
               >
                 <Linkedin size={20} className="text-neon-blue" />
               </a>
@@ -81,7 +81,7 @@ const FooterSection = () => {
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-center items-center gap-4">
           <button
             onClick={scrollToTop}
-            className="px-6 py-3 glass-card text-base font-semibold rounded-lg text-white"
+            className="px-6 py-3 glass-card text-base font-semibold rounded-lg text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-neon-blue/30"
           >
             Back to Top ↑
           </button>

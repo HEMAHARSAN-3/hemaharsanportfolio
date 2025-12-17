@@ -41,7 +41,7 @@ const ContactSection = () => {
   return (
     <section 
       id="contact" 
-      className="dark-section section-padding pt-32"
+      className="contact-section dark-section section-padding pt-32"
     >
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
@@ -95,7 +95,7 @@ const ContactSection = () => {
             
             <button
               type="submit"
-              className="submit-btn w-full glass-card px-6 py-3 md:px-8 md:py-4 text-base md:text-lg font-semibold rounded-lg md:rounded-xl text-white flex items-center justify-center gap-3"
+              className="submit-btn w-full glass-card px-6 py-3 md:px-8 md:py-4 text-base md:text-lg font-semibold rounded-lg md:rounded-xl text-white flex items-center justify-center gap-3 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-neon-blue/30"
             >
               <Send size={20} />
               Send Message
@@ -135,7 +135,7 @@ const ContactSection = () => {
                   href="https://github.com/HEMAHARSAN-3" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="social-icon relative p-3 glass-card ripple-effect"
+                  className="social-icon relative p-3 glass-card ripple-effect transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-neon-blue/30"
                 >
                   <Github size={24} className="text-white" />
                 </a>
@@ -143,7 +143,7 @@ const ContactSection = () => {
                   href="https://www.linkedin.com/in/hema-harsan-r" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="social-icon relative p-3 glass-card ripple-effect"
+                  className="social-icon relative p-3 glass-card ripple-effect transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-neon-blue/30"
                 >
                   <Linkedin size={24} className="text-neon-blue" />
                 </a>

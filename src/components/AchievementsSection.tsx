@@ -64,7 +64,7 @@ const AchievementsSection = () => {
   return (
     <section 
       id="achievements" 
-      className="dark-section section-padding pt-32"
+      className="achievements-section dark-section section-padding pt-32"
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}

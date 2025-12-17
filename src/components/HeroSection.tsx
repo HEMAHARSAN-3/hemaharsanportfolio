@@ -43,7 +43,7 @@ const HeroSection = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
-                className="cta-button glass-card px-6 py-3 md:px-8 md:py-4 text-base md:text-lg font-semibold rounded-lg md:rounded-xl text-white"
+                className="cta-button glass-card px-6 py-3 md:px-8 md:py-4 text-base md:text-lg font-semibold rounded-lg md:rounded-xl text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-neon-blue/30"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Hire Me
@@ -52,7 +52,7 @@ const HeroSection = () => {
                 href="/Hema_Harsan_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cta-button glass-card px-6 py-3 md:px-8 md:py-4 text-base md:text-lg font-semibold rounded-lg md:rounded-xl text-white"
+                className="cta-button glass-card px-6 py-3 md:px-8 md:py-4 text-base md:text-lg font-semibold rounded-lg md:rounded-xl text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-neon-blue/30"
               >
                 Resume
               </a>

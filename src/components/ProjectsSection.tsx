@@ -65,7 +65,7 @@ const ProjectsSection = () => {
   return (
     <section 
       id="projects" 
-      className="dark-section section-padding pt-40"
+      className="projects-section dark-section section-padding pt-40"
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
@@ -127,7 +127,7 @@ const ProjectsSection = () => {
                         href={project.liveDemo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-4 py-2 glass-card text-black text-sm rounded-lg font-semibold"
+                        className="flex items-center gap-2 px-4 py-2 glass-card text-black text-sm rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-neon-blue/30"
                       >
                         <ArrowSquareOut size={16} weight="light" />
                         Live Demo
@@ -137,7 +137,7 @@ const ProjectsSection = () => {
                       href={project.githubLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 glass-card text-white text-sm rounded-lg"
+                      className="flex items-center gap-2 px-4 py-2 glass-card text-white text-sm rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-neon-blue/30"
                     >
                       <GithubLogo size={16} weight="light" />
                       GitHub
