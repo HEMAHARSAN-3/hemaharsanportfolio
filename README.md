@@ -1,18 +1,8 @@
-# Welcome to your Lovable project
+# Welcome to your My Portfolio
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/e7966e31-4f84-4536-a365-b001b2d9e6b5
-
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/e7966e31-4f84-4536-a365-b001b2d9e6b5) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
+**URL**: https://hemaharsanportfolio.netlify.app/
 
 **Use your preferred IDE**
 
@@ -62,12 +52,4 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/e7966e31-4f84-4536-a365-b001b2d9e6b5) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+I deploy in Netlify.
