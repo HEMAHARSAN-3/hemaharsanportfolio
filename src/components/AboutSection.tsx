@@ -1,27 +1,9 @@
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const AboutSection = () => {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+  const sectionRef = useScrollReveal<HTMLElement>();
 
   return (
     <section 
@@ -32,7 +14,7 @@ const AboutSection = () => {
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Professional Photo - Left Column */}
-          <div className="relative flex justify-center lg:justify-start order-2 lg:order-1">
+          <div className="relative flex justify-center lg:justify-start order-2 lg:order-1 reveal-left" style={{ transitionDelay: '100ms' }}>
             <div className="relative w-80 h-80 lg:w-[450px] lg:h-[550px]">
               {/* Glowing background effect */}
               <div 
@@ -51,12 +33,6 @@ const AboutSection = () => {
                     alt="Hema Harsan R - AI & Full Stack Developer"
                     className="w-full h-full object-cover"
                   />
-                  
-                  {/* Animated reveal mask */}
-                  <div 
-                    className="absolute inset-0 translate-x-0 transition-transform duration-1000 delay-300 [.animate-in_&]:translate-x-full"
-                    style={{ background: 'hsl(190 95% 65%)' }}
-                  ></div>
                 </div>
               </div>
               
@@ -73,7 +49,7 @@ const AboutSection = () => {
           </div>
 
           {/* Text Content - Right Column */}
-          <div className="opacity-0 translate-x-16 transition-all duration-1000 delay-100 [.animate-in_&]:opacity-100 [.animate-in_&]:translate-x-0 order-1 lg:order-2">
+          <div className="reveal-right order-1 lg:order-2" style={{ transitionDelay: '200ms' }}>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient mb-8">
               About Me
             </h2>
