@@ -2,11 +2,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Github, Linkedin, Send, Mail, MapPin } from 'lucide-react';
 import emailjs from '@emailjs/browser';
-import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { useScrollRevealChildren } from '@/hooks/useScrollReveal';
 
 const ContactSection = () => {
   const formRef = useRef<HTMLFormElement>(null);
-  const sectionRef = useScrollReveal<HTMLElement>();
+  const containerRef = useScrollRevealChildren({ staggerDelay: 150 });
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
   useEffect(() => {
@@ -31,15 +31,15 @@ const ContactSection = () => {
   };
 
   return (
-    <section ref={sectionRef} id="contact" className="contact-section dark-section section-padding pt-32">
-      <div className="max-w-4xl mx-auto">
-        <div className="reveal-up text-center mb-16">
+    <section id="contact" className="contact-section dark-section section-padding pt-32">
+      <div ref={containerRef} className="max-w-4xl mx-auto">
+        <div data-reveal data-reveal-index={0} className="reveal-up text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">Let's Connect</h2>
           <p className="text-xl text-white/70 max-w-2xl mx-auto">Ready to bring your next project to life? Let's discuss how we can create something extraordinary together.</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          <form ref={formRef} onSubmit={handleSubmit} className="reveal-left space-y-6" style={{ transitionDelay: '100ms' }}>
+          <form ref={formRef} onSubmit={handleSubmit} data-reveal data-reveal-index={1} className="reveal-left space-y-6">
             <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleInputChange} className="cyber-input" required />
             <input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleInputChange} className="cyber-input" required />
             <textarea name="message" placeholder="Your Message" value={formData.message} onChange={handleInputChange} rows={6} className="cyber-input resize-none" required />
@@ -48,7 +48,7 @@ const ContactSection = () => {
             </button>
           </form>
 
-          <div className="reveal-right space-y-8" style={{ transitionDelay: '200ms' }}>
+          <div data-reveal data-reveal-index={2} className="reveal-right space-y-8">
             <div className="glass-card p-8">
               <h3 className="text-2xl font-bold text-white mb-6">Get in Touch</h3>
               <div className="space-y-4 text-white/80">
