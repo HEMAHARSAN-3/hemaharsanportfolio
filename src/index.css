@@ -187,13 +187,102 @@
   display: none;
 }
 
+/* ============================================================
+   NATURAL SCROLL REVEAL SYSTEM
+   GPU-accelerated: only transform + opacity (no layout thrash)
+   ============================================================ */
+
+/* Base hidden state — all reveal elements start here */
+.reveal-up {
+  opacity: 0;
+  transform: translate3d(0, 20px, 0);
+  transition: opacity 0.6s cubic-bezier(0.25, 0.1, 0.25, 1),
+              transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translate3d(-20px, 0, 0);
+  transition: opacity 0.6s cubic-bezier(0.25, 0.1, 0.25, 1),
+              transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translate3d(20px, 0, 0);
+  transition: opacity 0.6s cubic-bezier(0.25, 0.1, 0.25, 1),
+              transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale3d(0.95, 0.95, 1);
+  transition: opacity 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+              transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  will-change: opacity, transform;
+}
+
+/* Visible state — toggled by IntersectionObserver */
+.reveal-up.visible,
+.reveal-left.visible,
+.reveal-right.visible,
+.reveal-scale.visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+}
+
+/* Stagger support via CSS custom property */
+[data-reveal] {
+  transition-delay: calc(var(--reveal-delay, 0) * 1ms);
+}
+
+/* ============================================================
+   ACCESSIBILITY: Disable all motion for sensitive users
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-up,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    will-change: auto !important;
+  }
+
+  .floating-orb {
+    animation: none !important;
+  }
+
+  .skill-tag {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 /* Skill Tag Styles */
 .skill-tag {
   @apply flex items-center gap-2 px-4 py-2 md:px-5 md:py-3 rounded-full;
   @apply border-2 backdrop-blur-sm;
-  @apply transition-all duration-300 cursor-pointer;
+  @apply cursor-pointer;
   background: rgba(255, 255, 255, 0.05);
   border-color: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  transform: translate3d(0, 12px, 0);
+  transition: opacity 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
+              transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
+              background 0.3s ease,
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+  will-change: opacity, transform;
+}
+
+.skill-tag.visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
 }
 
 .skill-tag:hover {
@@ -203,17 +292,12 @@
   box-shadow: 0 4px 20px hsl(190 95% 65% / 0.3);
 }
 
-.skill-tag-enter {
-  animation: skillTagSlideUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+/* Floating orb — pure CSS animation, GPU-accelerated */
+@keyframes gentleFloat {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(3px, -8px, 0); }
 }
 
-@keyframes skillTagSlideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.floating-orb {
+  animation: gentleFloat 6s ease-in-out infinite;
 }
