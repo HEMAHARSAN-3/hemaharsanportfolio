@@ -1,8 +1,11 @@
 
 import React from 'react';
 import { ArrowSquareOut, GithubLogo } from 'phosphor-react';
+import { useScrollReveal, useScrollRevealChildren } from '@/hooks/useScrollReveal';
 
 const ProjectsSection = () => {
+  const headerRef = useScrollReveal<HTMLDivElement>();
+  const gridRef = useScrollRevealChildren({ staggerDelay: 100 });
 
   const projects = [
     {
@@ -61,15 +64,11 @@ const ProjectsSection = () => {
     }
   ];
 
-
   return (
-    <section 
-      id="projects" 
-      className="projects-section dark-section section-padding pt-40"
-    >
+    <section id="projects" className="projects-section dark-section section-padding pt-40">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-20">
+        <div ref={headerRef} className="reveal-up text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
             Featured Projects
           </h2>
@@ -79,36 +78,28 @@ const ProjectsSection = () => {
         </div>
 
         {/* Projects Grid */}
-        <div 
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          {projects.map((project) => (
-            <div 
+        <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <div
               key={project.id}
-              className="relative cursor-pointer"
+              data-reveal
+              data-reveal-index={index}
+              className="reveal-scale relative cursor-pointer"
             >
-              {/* Card Content */}
               <div className="glass-card p-6 h-full flex flex-col">
-                {/* Project Image */}
                 <div className="aspect-video rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-cyber-purple to-cyber-blue">
                   <img 
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </div>
                 
-                {/* Project Info */}
                 <div className="space-y-4 flex-1 flex flex-col">
-                  <h3 className="text-xl font-bold text-white">
-                    {project.title}
-                  </h3>
+                  <h3 className="text-xl font-bold text-white">{project.title}</h3>
+                  <p className="text-white/70 text-sm leading-relaxed">{project.description}</p>
                   
-                  <p className="text-white/70 text-sm leading-relaxed">
-                    {project.description}
-                  </p>
-                  
-                  {/* Tech Stack */}
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech) => (
                       <span 
@@ -120,7 +111,6 @@ const ProjectsSection = () => {
                     ))}
                   </div>
                   
-                  {/* Action Buttons - Positioned at bottom */}
                   <div className="flex gap-3 mt-auto pt-4">
                     {project.liveDemo && project.liveDemo !== "#" && (
                       <a 

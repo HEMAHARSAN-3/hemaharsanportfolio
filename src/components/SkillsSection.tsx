@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Badge } from '@/components/ui/badge';
+import React from 'react';
+import { useScrollReveal, useScrollRevealChildren } from '@/hooks/useScrollReveal';
 
 interface Skill {
   name: string;
@@ -13,8 +13,8 @@ interface SkillCategory {
 }
 
 const SkillsSection = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const headerRef = useScrollReveal<HTMLDivElement>();
+  const gridRef = useScrollRevealChildren({ staggerDelay: 60 });
 
   const skillCategories: SkillCategory[] = [
     {
@@ -58,36 +58,13 @@ const SkillsSection = () => {
     }
   ];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
+  let globalIndex = 0;
 
   return (
-    <section 
-      id="skills" 
-      className="skills-section dark-section section-padding pt-32"
-      ref={sectionRef}
-    >
+    <section id="skills" className="skills-section dark-section section-padding pt-32">
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+        <div ref={headerRef} className="reveal-up text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-4">
             My Skills
           </h2>
@@ -96,42 +73,38 @@ const SkillsSection = () => {
           </p>
         </div>
 
-        {/* Skills Categories - 4 Column Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
-          {skillCategories.map((category, categoryIndex) => (
-            <div 
-              key={category.title}
-              className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-              style={{
-                transitionDelay: `${categoryIndex * 100}ms`
-              }}
-            >
+        {/* Skills Categories */}
+        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+          {skillCategories.map((category) => (
+            <div key={category.title} data-reveal data-reveal-index={globalIndex++} className="reveal-up">
               <h3 className="text-2xl md:text-3xl font-semibold text-white/90 mb-6 text-center">
                 {category.title}
               </h3>
               <div className="flex flex-wrap justify-center gap-3 md:gap-4">
-                {category.skills.map((skill, skillIndex) => (
-                  <div
-                    key={skill.name}
-                    className={`skill-tag ${isVisible ? 'skill-tag-enter' : 'opacity-0'}`}
-                    style={{
-                      animationDelay: `${(categoryIndex * 100) + (skillIndex * 50)}ms`
-                    }}
-                  >
-                    {skill.iconType === "image" ? (
-                      <img 
-                        src={skill.icon} 
-                        alt={skill.name}
-                        className="w-5 h-5 md:w-6 md:h-6 object-contain"
-                      />
-                    ) : (
-                      <span className="text-lg md:text-xl">{skill.icon}</span>
-                    )}
-                    <span className="text-sm md:text-base font-medium">
-                      {skill.name}
-                    </span>
-                  </div>
-                ))}
+                {category.skills.map((skill) => {
+                  const idx = globalIndex++;
+                  return (
+                    <div
+                      key={skill.name}
+                      data-reveal
+                      data-reveal-index={idx}
+                      className="skill-tag"
+                    >
+                      {skill.iconType === "image" ? (
+                        <img 
+                          src={skill.icon} 
+                          alt={skill.name}
+                          className="w-5 h-5 md:w-6 md:h-6 object-contain"
+                        />
+                      ) : (
+                        <span className="text-lg md:text-xl">{skill.icon}</span>
+                      )}
+                      <span className="text-sm md:text-base font-medium">
+                        {skill.name}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           ))}

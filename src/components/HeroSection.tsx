@@ -1,7 +1,16 @@
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const HeroSection = () => {
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Simple delayed reveal for hero content
+    const timer = setTimeout(() => {
+      contentRef.current?.classList.add('visible');
+    }, 300);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
@@ -18,7 +27,7 @@ const HeroSection = () => {
       </div>
       
       {/* Content Overlay - Centered */}
-      <div className="hero-content relative z-10 section-padding w-full">
+      <div ref={contentRef} className="reveal-up relative z-10 section-padding w-full">
         <div className="max-w-6xl mx-auto flex items-center justify-center min-h-screen">
           <div className="text-center max-w-3xl mx-auto">
             {/* Main Headline */}
