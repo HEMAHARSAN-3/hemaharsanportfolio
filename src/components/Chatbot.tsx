@@ -161,7 +161,7 @@ const Chatbot = () => {
   };
 
   const suggestedQuestions = [
-    "What are Hema's skills?",
+    "What are Hema Harsan's skills?",
     "Tell me about his projects",
     "What achievements does he have?",
   ];

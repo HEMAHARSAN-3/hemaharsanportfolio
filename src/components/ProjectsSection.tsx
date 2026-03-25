@@ -117,7 +117,7 @@ const ProjectsSection = () => {
                         href={project.liveDemo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-4 py-2 glass-card text-black text-sm rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-neon-blue/30"
+                        className="flex items-center gap-2 px-4 py-2 glass-card text-white text-sm rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-neon-blue/30"
                       >
                         <ArrowSquareOut size={16} weight="light" />
                         Live Demo
