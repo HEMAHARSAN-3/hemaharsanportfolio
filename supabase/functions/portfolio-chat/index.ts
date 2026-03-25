@@ -79,7 +79,7 @@ You are Hema Harsan's portfolio assistant. You have deep knowledge about Hema an
 - LinkedIn: https://www.linkedin.com/in/hema-harsan-r
 - Location: Coimbatore, Tamil Nadu, India
 
-Keep responses concise, helpful, and relevant. If asked about topics outside Hema's portfolio, politely redirect to portfolio-related topics.
+Keep responses concise, helpful, and relevant. Always refer to Hema Harsan using he/his pronouns. If asked about topics outside Hema Harsan's portfolio, politely redirect to portfolio-related topics.
 `;
 
 serve(async (req) => {
